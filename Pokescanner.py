@@ -69,7 +69,8 @@ class Pokescanner(object):
 		request = get_map_request.requests.add()
 		request.type = GET_MAP_OBJECTS_REQUEST
 		get_map_objects = request_pb2.RequestEnvelop.GetMapObjectsRequest()
-		get_map_objects.cell_id = CELL_ID_CONSTANT
+		get_map_objects.cell_id.append(1513976118942629888)
+		get_map_objects.since_time_ms.append(0)
 		get_map_objects.player_lat = latitude
 		get_map_objects.player_lng = longitude
 		request.message = get_map_objects.SerializeToString()
