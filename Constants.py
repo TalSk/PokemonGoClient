@@ -1,9 +1,7 @@
-USE_PROXY = True
-FIDDLER_PROXY = {'http': 'http://127.0.0.1:8888', 'https': 'http://127.0.0.1:8888'}
-
+#####################################################
+# Constant details for use in Google's auth request #
+#####################################################
 ANDROID_AUTH_ENDPOINT = "https://android.clients.google.com/auth"
-
-# Constant details for use in Google's auth request
 ANDROID_ID = "3e93a95e2fd2b281" # Not a must. Can be randomized, or given as an input
 LANG = "en_US"
 GOOGLE_PLAY_SERVICES_VERSION = 9256438 # Haven't changed in a while ;)
@@ -17,19 +15,27 @@ CHECK_EMAIL = 1
 TOKEN_REQUEST_OPTIONS = ""
 CALLER_PKG = APP
 
-# Constants for use in every request
+######################################
+# Constants for use in every request #
+######################################
 USER_AGENT = "Dalvik/2.1.0 (Linux; U; Android 6.0.1; A0001 Build/MHC19Q)"
+USE_PROXY = True
+FIDDLER_PROXY = {'http': 'http://127.0.0.1:8888', 'https': 'http://127.0.0.1:8888'}
 
 
-# Contants for scanner requests
-# THIS IS THE PROBLEM :(
-CELL_ID_CONSTANT = "\200\200\200\200\244\250\256\201\025\200\200\200\200\254\250\256\201\025\200\200\200\200\264\250\256\201\025\200\200\200\200\274\250\256\201\025\200\200\200\200\314\250\256\201\025\200\200\200\200\264\253\256\201\025\200\200\200\200\274\253\256\201\025\200\200\200\200\304\253\256\201\025\200\200\200\200\314\253\256\201\025\200\200\200\200\324\253\256\201\025\200\200\200\200\334\253\256\201\025\200\200\200\200\344\253\256\201\025\200\200\200\200\354\253\256\201\025\200\200\200\200\344\254\256\201\025\200\200\200\200\354\254\256\201\025\200\200\200\200\364\254\256\201\025\200\200\200\200\374\254\256\201\025\200\200\200\200\204\255\256\201\025\200\200\200\200\214\255\256\201\025\200\200\200\200\224\255\256\201\025\200\200\200\200\234\255\256\201\025"
-#CELL_ID_CONSTANT = ""
-GPS_Z_CONSTANT = 0x4042c00000000000
-
+#################################
+# Contants for scanner requests #
+#################################
+GPS_Z_CONSTANT = 0x4042c00000000000 # The server seems to completely ignore this.
 BASE_NIANTIC_URL = "https://pgorelease.nianticlabs.com/plfe/rpc"
 GET_MAP_OBJECTS_REQUEST = 106
 
+
+###################
+# Other constants #
+###################
+DEFAULT_LOG_PATH = "default_log.log"
+DEBUG = True
 
 POKEDEX = {
 	'1' :	"Bulbasaur",
