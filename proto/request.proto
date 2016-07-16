@@ -42,8 +42,10 @@ message RequestEnvelop {
   }
 
   message GetMapObjectsRequest{
-    repeated uint64 cell_id = 1;
-    repeated int64 since_time_ms = 2;
+    //repeated uint64 cell_id = 1;
+    bytes cell_id = 1;
+    //repeated int64 since_time_ms = 2;
+    bytes since_time_ms = 2;
     fixed64 player_lat = 3;
     fixed64 player_lng = 4;
   }

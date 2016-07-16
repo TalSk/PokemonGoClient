@@ -96,11 +96,13 @@ class Pokescanner(object):
 		self.logger.debug("Received session token:\r\n%s" % self.session_token)
 		self.logger.info("Logged in successfully!")
 
-	def _get_map_objects_request(self, longitude, latitude, cell_ids):
+
+	def _get_map_objects_request(self, latitude, longitude, cell_ids):
 		# Creating a raw request
 		req_env = request_pb2.RequestEnvelop()
 		req_env.unknown1 = 2
 		req_env.rpc_id = Utils.randomize_rpc_id()
+
 
 		# Requesting a GET_MAP_OBJECTS response
 		get_map_objects_request = req_env.requests.add()
@@ -108,23 +110,25 @@ class Pokescanner(object):
 
 		# Adding information about wanted response - requested cell ids
 		get_map_objects_proto = request_pb2.RequestEnvelop.GetMapObjectsRequest()
-		#for cell_id in cell_ids:
-		#	get_map_objects_proto.cell_id.append(cell_id.id())
-		get_map_objects_proto.cell_id.append(1513976118942629888)
-		get_map_objects_proto.since_time_ms.append(0)
+		# for cell_id in cell_ids:
+		# 	get_map_objects_proto.cell_id.append(cell_id.id())
+		# 	get_map_objects_proto.since_time_ms.append(0)
+		get_map_objects_proto.cell_id = "\200\200\200\200\244\250\256\201\025"
+		get_map_objects_proto.since_time_ms = "\000"
 		get_map_objects_proto.player_lat = latitude
 		get_map_objects_proto.player_lng = longitude
 
 		get_map_objects_request.message = get_map_objects_proto.SerializeToString()
-
 		# Adding other request details, including session token
 		req_env.gps_x = latitude
 		req_env.gps_y = longitude
-		req_env.gps_z = GPS_Z_CONSTANT
+		#req_env.gps_z = GPS_Z_CONSTANT
 		req_env.token.token = self.session_token.token
 		req_env.token.timestamp = self.session_token.timestamp
 		req_env.token.sig = self.session_token.sig
-		req_env.time_delta = 151 # TODO
+		req_env.time_delta = 3122 # TODO
+
+
 
 		data = req_env.SerializeToString()
 		self.logger.debug("Sending get map objects request:\r\n%s" % req_env)
@@ -167,5 +171,5 @@ class Pokescanner(object):
 if __name__ == '__main__':
 	a = Pokescanner()
 	a.google_login("taltaltal1994@gmail.com", "#")
-	a.scan(31.8070215,34.7796028)
+	a.scan(31.809736251831055, 34.7845344543457)
 

@@ -26,7 +26,7 @@ FIDDLER_PROXY = {'http': 'http://127.0.0.1:8888', 'https': 'http://127.0.0.1:888
 #################################
 # Contants for scanner requests #
 #################################
-GPS_Z_CONSTANT = 0x4042c00000000000 # The server seems to completely ignore this.
+GPS_Z_CONSTANT = 0x40399df3c0000000 # The server seems to completely ignore this.
 BASE_NIANTIC_URL = "https://pgorelease.nianticlabs.com/plfe/rpc"
 GET_MAP_OBJECTS_REQUEST = 106
 
