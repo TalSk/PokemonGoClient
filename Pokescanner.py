@@ -86,6 +86,6 @@ class Pokescanner(object):
 
 
 if __name__ == '__main__':
-	a = Pokescanner("taltaltal1994@gmail.com", "oauth2rt_1/51760r0ineUINW0sUDr75RAPFq7pUuXoDb0RZzKgHT8")
+	a = Pokescanner("taltaltal1994@gmail.com", "#")
 	a.scan(31.8070215,34.7796028)
 
