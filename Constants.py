@@ -36,6 +36,8 @@ GET_MAP_OBJECTS_REQUEST = 106
 ###################
 DEFAULT_LOG_PATH = "default_log.log"
 DEBUG = True
+BOUNDARY = "------------------------------------------------------------\r\n"
+HOUR = 3600
 
 POKEDEX = {
 	'1' :	"Bulbasaur",

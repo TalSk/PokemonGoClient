@@ -1,13 +1,51 @@
 import Utils
 import request_pb2
 import response_pb2
+import time
 from Constants import *
 from JWTReceiver import *
 
 class Pokescanner(object):
+	CACHE_FILE = "login.cache"
 	
 	def __init__(self):
 		self.logger = Utils.initialize_logger()
+
+
+	def _has_cache_login(self):
+		try:
+			with open(self.CACHE_FILE, "rb") as f:
+				timestamp = f.readline()
+				if not timestamp:
+					return False
+				if time.time() > float(timestamp) + HOUR:
+					return False
+				return True
+		except Exception:
+			return False
+
+
+	def _get_cache_login(self):
+		with open(self.CACHE_FILE, "rb") as f:
+			f.readline()
+			url = f.readline()[:-2] # To remove \r\n
+			token_data = response_pb2.ResponseEnvelop.TokenData()
+			token = f.readline()[:-2]
+			token_data.token = token
+			timestamp = f.readline()[:-2]
+			token_data.timestamp = long(timestamp)
+			sig = f.readline()[:-2]
+			token_data.sig = sig
+			return url, token_data
+
+
+	def _cache_login(self):
+		with open(self.CACHE_FILE, "wb") as f:
+			f.write(str(time.time()) + "\r\n")
+			f.write(self.url + "\r\n")
+			f.write(self.session_token.token + "\r\n")
+			f.write(str(self.session_token.timestamp) + "\r\n")
+			f.write(self.session_token.sig + "\r\n")
 
 
 	def _parse_response(self, response_content):
@@ -30,7 +68,7 @@ class Pokescanner(object):
 		req_env.time_delta = 1036 # TODO
 
 		raw_data = req_env.SerializeToString()
-
+		self.logger.debug("Sending session token request:\r\n%s" % req_env)
 		return Utils.request("POST", BASE_NIANTIC_URL, raw_data).content
 
 
@@ -48,11 +86,15 @@ class Pokescanner(object):
 
 
 	def google_login(self, user_email, user_oauth_token):
-		jwt_receiver = JWTReceiver(user_email, user_oauth_token)
-		self.url, self.session_token = self._create_session(jwt_receiver.get_token())
+		if self._has_cache_login():
+			self.url, self.session_token = self._get_cache_login()
+		else:
+			jwt_receiver = JWTReceiver(user_email, user_oauth_token)
+			self.url, self.session_token = self._create_session(jwt_receiver.get_token())
+			self._cache_login()
 		self.logger.debug("Received endpoint url: %s" % self.url)
 		self.logger.debug("Received session token:\r\n%s" % self.session_token)
-
+		self.logger.info("Logged in successfully!")
 
 	def _get_map_objects_request(self, longitude, latitude, cell_ids):
 		# Creating a raw request
@@ -85,6 +127,7 @@ class Pokescanner(object):
 		req_env.time_delta = 151 # TODO
 
 		data = req_env.SerializeToString()
+		self.logger.debug("Sending get map objects request:\r\n%s" % req_env)
 
 		return Utils.request("POST", self.url, data).content
 
@@ -94,7 +137,11 @@ class Pokescanner(object):
 		get_map_objects_response = response_pb2.PossibleResponse1()
 		get_map_objects_response.ParseFromString(res_pb.responses[0])
 		assert get_map_objects_response
+		self.logger.debug("Parsing get map objects response:\r\n%s" % get_map_objects_response)
 
+		# TODO: Make pokemon found a set
+		# TODO: Calculate distance to walk to wild and catchable pokemon.
+		# TODO: Put nearby pokemon in a differnet area
 		for map_tile in get_map_objects_response.map_tiles:
 			if len(map_tile.nearby_pokemon) > 0:
 				for nearby_pokemon in map_tile.nearby_pokemon:
@@ -109,6 +156,7 @@ class Pokescanner(object):
 
 	def scan(self, latitude, longitude):
 		neighboring_cell_ids = Utils.get_neighbors(latitude, longitude)
+		self.logger.debug("Received the following neighboring cell ids:\r\n%s" % neighboring_cell_ids)
 		latitude = Utils.double_to_hex(latitude)
 		longitude = Utils.double_to_hex(longitude)
 

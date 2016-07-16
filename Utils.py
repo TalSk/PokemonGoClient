@@ -67,7 +67,9 @@ class Logger(object):
 		self.file = open(DEFAULT_LOG_PATH, "a")
 		
 	def _write(self, prefix, string):
-		self.file.write(time.ctime(time.time()) + prefix + string)
+		self.file.write(BOUNDARY)
+		self.file.write(prefix + time.ctime(time.time()) + "--" + string + "\r\n")
+		self.file.write(BOUNDARY)
 
 	def debug(self, string):
 		if self.log_level >= self.DEBUG:
