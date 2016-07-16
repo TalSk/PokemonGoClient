@@ -10,7 +10,7 @@ This tool will let you:
 ## Alright, I'm interested!
 Here's a tease:
 
-![Teaser Image](https://s31.postimg.org/7a0evz7fv/Pokescannmer.png)
+![Teaser Image](http://i.imgur.com/4pQVu9S.png)
 ## Documentation
 - Create a new instance of the `Pokescanner` class, giving it your Google Email and an OAuth token (Can be extracted from your phone)
 - Call the function `scan` with any longitude/latitude pair
