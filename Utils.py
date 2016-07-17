@@ -32,7 +32,10 @@ def request(method, url, data=None):
 	req = requests.Request(method, url, data=data, headers=headers)		
 	s = requests.Session()
 	prepped = s.prepare_request(req)
-	return s.send(prepped, verify=False, proxies=proxies)
+	try:
+		return s.send(prepped, verify=False, proxies=proxies)
+	except requests.exceptions.ConnectionError:
+		raise ServerDownException("Could not connect to Pokemon Go servers")
 
 def randomize_rpc_id():
 	return randint(1000000000000000000, 9000000000000000000)
@@ -50,6 +53,10 @@ def initialize_logger(log_level="i"):
 	if DEBUG:
 		return Logger("d")
 	return Logger(log_level)
+
+
+class ServerDownException(Exception):
+	pass
 
 
 class Logger(object):

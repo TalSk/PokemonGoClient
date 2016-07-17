@@ -1,6 +1,7 @@
 import requests
 import urllib
 import re
+import Utils
 from Constants import *
 
 
@@ -55,5 +56,8 @@ class JWTReceiver(object):
 		if USE_PROXY:
 			proxies = FIDDLER_PROXY
 		s = requests.Session()
-		response = s.send(self.request, verify=False, proxies=proxies)
+		try:
+			response = s.send(self.request, verify=False, proxies=proxies)
+		except requests.exceptions.ConnectionError:
+			raise Utils.ServerDownException("Could not connect to Google auth server")
 		return self._extract_token(response.content)

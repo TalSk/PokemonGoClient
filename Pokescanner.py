@@ -150,10 +150,18 @@ class Pokescanner(object):
 					print "[I] There is a %s just %s meters away" % (POKEDEX[str(nearby_pokemon.pokedex_number)], Utils.hex_to_float(nearby_pokemon.distance_meters))
 			if len(map_tile.wild_pokemon) > 0:
 				for wild_pokemon in map_tile.wild_pokemon:
-					print "[!] There is a %s in these co-ords: %s, %s!" % (POKEDEX[str(wild_pokemon.info.number)], Utils.hex_to_double(wild_pokemon.lat), Utils.hex_to_double(wild_pokemon.lng))
+					pokemon_name = POKEDEX[str(wild_pokemon.info.number)]
+					pokemon_lat = Utils.hex_to_double(wild_pokemon.lat)
+					pokemon_lng = Utils.hex_to_double(wild_pokemon.lng)
+					disappear_time = time.ctime(time.time() + wild_pokemon.time_till_hidden)
+					print "[!] There is a %s in these co-ords: %s, %s! Disappears in: %s" % (pokemon_name, pokemon_lat, pokemon_lng, disappear_time)
 			if len(map_tile.catchable_pokemon) > 0:
 				for catchable_pokemon in map_tile.catchable_pokemon:
-					print "[!] There is a %s in these co-ords: %s, %s!" % (POKEDEX[str(catchable_pokemon.pkmn_no)], Utils.hex_to_double(catchable_pokemon.lat), Utils.hex_to_double(catchable_pokemon.lng))
+					pokemon_name = POKEDEX[str(catchable_pokemon.pkmn_no)]
+					pokemon_lat = Utils.hex_to_double(catchable_pokemon.lat)
+					pokemon_lng = Utils.hex_to_double(catchable_pokemon.lng)
+					disappear_time = time.ctime(catchable_pokemon.time / 1000.)
+					print "[!] There is a %s in these co-ords: %s, %s! Disappears in: %s" % (pokemon_name, pokemon_lat, pokemon_lng, disappear_time)
 
 
 	def scan(self, latitude, longitude):
@@ -168,6 +176,6 @@ class Pokescanner(object):
 
 if __name__ == '__main__':
 	a = Pokescanner()
-	a.google_login("taltaltal1994@gmail.com", "#")
-	a.scan(31.809736251831055, 34.7845344543457)
+	a.google_login("taltaltal1994@gmail.com", "oauth2rt_1/#")
+	a.scan(31.8075407,34.7837931)
 
