@@ -6,7 +6,7 @@ from Auth import GoogleLogin
 from Actions import GetMapObjects
 
 
-class PokeonGoClient(object):
+class PokemonGoClient(object):
 	
 	def __init__(self, log=False):
 		self.logger=None
@@ -34,27 +34,6 @@ class PokeonGoClient(object):
 			self.logger.info("Logged in successfully as %s!" % email)
 
 
-	def _parse_map_objects_response(self, data):
-		# TODO: Make pokemon found a set
-		# TODO: Calculate distance to walk to wild and catchable pokemon.
-		# TODO: Put nearby pokemon in a differnet area
-		for map_cell in data.map_tiles:
-			if len(map_cell.three_steps_pokemon) > 0:
-				for pokemon in map_cell.three_steps_pokemon:
-					print "[I] There is a %s just %s meters away" % (Constants.POKEDEX[str(pokemon.pokemon_id)], pokemon.distance_in_meters)
-			if len(map_cell.two_steps_pokemon) > 0:
-				for pokemon in map_cell.two_steps_pokemon:
-					pokemon_name = Constants.POKEDEX[str(pokemon.pokemon_details.pokemon_id)]
-					print "[!] There is a %s in these co-ords: %s, %s!" % (pokemon_name, pokemon.latitude, pokemon.longitude)
-			if len(map_cell.one_step_pokemon) > 0:
-				for pokemon in map_cell.one_step_pokemon:
-					pokemon_name = Constants.POKEDEX[str(pokemon.pokemon_id)]
-					disappear_time = "Unknown time"
-					if pokemon.expiration_timestamp_ms != -1:
-						disappear_time = time.ctime(pokemon.expiration_timestamp_ms / 1000.)
-					print "[!] There is a %s in these co-ords: %s, %s! Disappears in: %s" % (pokemon_name, pokemon.latitude, pokemon.longitude, disappear_time)
-
-
 	def get_map_objects(self, latitude, longitude, altitude):
 		neighboring_cell_ids = Utils.get_neighbors(latitude, longitude)
 		self.logger.debug("Received the following neighboring cell ids:\r\n%s" % neighboring_cell_ids)
@@ -68,17 +47,12 @@ class PokeonGoClient(object):
 		raw_request.longitude = longitude
 		raw_request.altitude = altitude # TODO
 
-		map_objects_response = GetMapObjects.GetMapObjects(raw_request, self.url, self.logger).get(latitude, longitude, neighboring_cell_ids)
-		return self._parse_map_objects_response(map_objects_response)
+		return GetMapObjects.GetMapObjects(raw_request, self.url, self.logger).get(latitude, longitude, neighboring_cell_ids)
 
 
 	def get_player(self):
 		# TODO
 		pass
 
-if __name__ == '__main__':
-	a = PokeonGoClient(log=True)
-	a.login("taltaltal1994@gmail.com", "oauth2rt_1/#")
-	a.get_map_objects(31.804105, 34.784143, 0x4042c00000000000)
-	#a.get_map_objects(31.809826, 34.784631)
+	
 
