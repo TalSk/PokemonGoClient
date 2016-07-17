@@ -10,6 +10,7 @@ This tool will let you:
 
 And in the future, using this tool, the following will be implemented:
 - Auto-walker - for hatching eggs easily.
+- Auto-PokéScanner
 - Auto-PokéStopper
 - Auto-PokéCatcher
 
