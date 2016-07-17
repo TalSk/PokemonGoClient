@@ -110,11 +110,9 @@ class Pokescanner(object):
 
 		# Adding information about wanted response - requested cell ids
 		get_map_objects_proto = request_pb2.RequestEnvelop.GetMapObjectsRequest()
-		# for cell_id in cell_ids:
-		# 	get_map_objects_proto.cell_id.append(cell_id.id())
-		# 	get_map_objects_proto.since_time_ms.append(0)
-		get_map_objects_proto.cell_id = "\200\200\200\200\244\250\256\201\025"
-		get_map_objects_proto.since_time_ms = "\000"
+		for cell_id in cell_ids:
+		 	get_map_objects_proto.cell_id.append(cell_id.id())
+		 	get_map_objects_proto.since_time_ms.append(0)
 		get_map_objects_proto.player_lat = latitude
 		get_map_objects_proto.player_lng = longitude
 
@@ -122,7 +120,7 @@ class Pokescanner(object):
 		# Adding other request details, including session token
 		req_env.gps_x = latitude
 		req_env.gps_y = longitude
-		#req_env.gps_z = GPS_Z_CONSTANT
+		req_env.gps_z = GPS_Z_CONSTANT
 		req_env.token.token = self.session_token.token
 		req_env.token.timestamp = self.session_token.timestamp
 		req_env.token.sig = self.session_token.sig

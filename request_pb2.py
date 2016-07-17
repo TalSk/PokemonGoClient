@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='request.proto',
   package='',
   syntax='proto3',
-  serialized_pb=_b('\n\rrequest.proto\"\xbf\x05\n\x0eRequestEnvelop\x12\x10\n\x08unknown1\x18\x01 \x01(\x05\x12\x0e\n\x06rpc_id\x18\x03 \x01(\x03\x12)\n\x08requests\x18\x04 \x03(\x0b\x32\x17.RequestEnvelop.Request\x12*\n\x08unknown6\x18\x06 \x01(\x0b\x32\x18.RequestEnvelop.Unknown6\x12\r\n\x05gps_x\x18\x07 \x01(\x06\x12\r\n\x05gps_y\x18\x08 \x01(\x06\x12\r\n\x05gps_z\x18\t \x01(\x06\x12&\n\x04\x61uth\x18\n \x01(\x0b\x32\x18.RequestEnvelop.AuthInfo\x12(\n\x05token\x18\x0b \x01(\x0b\x32\x19.RequestEnvelop.TokenData\x12\x12\n\ntime_delta\x18\x0c \x01(\x03\x1a(\n\x07Request\x12\x0c\n\x04type\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\x0c\x1ao\n\x08Unknown6\x12\x10\n\x08unknown1\x18\x01 \x01(\x05\x12\x33\n\x08unknown2\x18\x02 \x01(\x0b\x32!.RequestEnvelop.Unknown6.Unknown2\x1a\x1c\n\x08Unknown2\x12\x10\n\x08unknown1\x18\x01 \x01(\x0c\x1a\x62\n\x08\x41uthInfo\x12\x10\n\x08provider\x18\x01 \x01(\t\x12+\n\x05token\x18\x02 \x01(\x0b\x32\x1c.RequestEnvelop.AuthInfo.JWT\x1a\x17\n\x03JWT\x12\x10\n\x08\x63ontents\x18\x01 \x01(\t\x1a:\n\tTokenData\x12\r\n\x05token\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x0b\n\x03sig\x18\x03 \x01(\x0c\x1a\x66\n\x14GetMapObjectsRequest\x12\x0f\n\x07\x63\x65ll_id\x18\x01 \x01(\x0c\x12\x15\n\rsince_time_ms\x18\x02 \x01(\x0c\x12\x12\n\nplayer_lat\x18\x03 \x01(\x06\x12\x12\n\nplayer_lng\x18\x04 \x01(\x06\x62\x06proto3')
+  serialized_pb=_b('\n\rrequest.proto\"\xbf\x05\n\x0eRequestEnvelop\x12\x10\n\x08unknown1\x18\x01 \x01(\x05\x12\x0e\n\x06rpc_id\x18\x03 \x01(\x03\x12)\n\x08requests\x18\x04 \x03(\x0b\x32\x17.RequestEnvelop.Request\x12*\n\x08unknown6\x18\x06 \x01(\x0b\x32\x18.RequestEnvelop.Unknown6\x12\r\n\x05gps_x\x18\x07 \x01(\x06\x12\r\n\x05gps_y\x18\x08 \x01(\x06\x12\r\n\x05gps_z\x18\t \x01(\x06\x12&\n\x04\x61uth\x18\n \x01(\x0b\x32\x18.RequestEnvelop.AuthInfo\x12(\n\x05token\x18\x0b \x01(\x0b\x32\x19.RequestEnvelop.TokenData\x12\x12\n\ntime_delta\x18\x0c \x01(\x03\x1a(\n\x07Request\x12\x0c\n\x04type\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\x0c\x1ao\n\x08Unknown6\x12\x10\n\x08unknown1\x18\x01 \x01(\x05\x12\x33\n\x08unknown2\x18\x02 \x01(\x0b\x32!.RequestEnvelop.Unknown6.Unknown2\x1a\x1c\n\x08Unknown2\x12\x10\n\x08unknown1\x18\x01 \x01(\x0c\x1a\x62\n\x08\x41uthInfo\x12\x10\n\x08provider\x18\x01 \x01(\t\x12+\n\x05token\x18\x02 \x01(\x0b\x32\x1c.RequestEnvelop.AuthInfo.JWT\x1a\x17\n\x03JWT\x12\x10\n\x08\x63ontents\x18\x01 \x01(\t\x1a:\n\tTokenData\x12\r\n\x05token\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x0b\n\x03sig\x18\x03 \x01(\x0c\x1a\x66\n\x14GetMapObjectsRequest\x12\x0f\n\x07\x63\x65ll_id\x18\x01 \x03(\x04\x12\x15\n\rsince_time_ms\x18\x02 \x03(\x03\x12\x12\n\nplayer_lat\x18\x03 \x01(\x06\x12\x12\n\nplayer_lng\x18\x04 \x01(\x06\x62\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -250,15 +250,15 @@ _REQUESTENVELOP_GETMAPOBJECTSREQUEST = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='cell_id', full_name='RequestEnvelop.GetMapObjectsRequest.cell_id', index=0,
-      number=1, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b(""),
+      number=1, type=4, cpp_type=4, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='since_time_ms', full_name='RequestEnvelop.GetMapObjectsRequest.since_time_ms', index=1,
-      number=2, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b(""),
+      number=2, type=3, cpp_type=2, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
