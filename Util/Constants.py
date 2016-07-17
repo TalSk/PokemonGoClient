@@ -16,17 +16,14 @@ TOKEN_REQUEST_OPTIONS = ""
 CALLER_PKG = APP
 
 ######################################
-# Constants for use in every request #
+# Net Constants #
 ######################################
-USER_AGENT = "Dalvik/2.1.0 (Linux; U; Android 6.0.1; A0001 Build/MHC19Q)"
-USE_PROXY = True
 FIDDLER_PROXY = {'http': 'http://127.0.0.1:8888', 'https': 'http://127.0.0.1:8888'}
 
 
-#################################
-# Contants for scanner requests #
-#################################
-GPS_Z_CONSTANT = 0x40399df3c0000000 # The server seems to completely ignore this.
+#########################################
+# Constants for GET_MAP_OBJECTS requests #
+#########################################
 BASE_NIANTIC_URL = "https://pgorelease.nianticlabs.com/plfe/rpc"
 GET_MAP_OBJECTS_REQUEST = 106
 
@@ -34,11 +31,8 @@ GET_MAP_OBJECTS_REQUEST = 106
 ###################
 # Other constants #
 ###################
-DEFAULT_LOG_PATH = "default_log.log"
-DEBUG = True
 BOUNDARY = "------------------------------------------------------------\r\n"
-HOUR = 3600
-
+HALF_AN_HOUR = 1800
 POKEDEX = {
 	'1' :	"Bulbasaur",
 	'2' :	"Ivysaur",
