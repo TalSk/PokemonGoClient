@@ -78,7 +78,7 @@ class PokeonGoClient(object):
 
 if __name__ == '__main__':
 	a = PokeonGoClient(log=True)
-	a.login("taltaltal1994@gmail.com", "oauth2rt_1/51760r0ineUINW0sUDr75RAPFq7pUuXoDb0RZzKgHT8")
+	a.login("taltaltal1994@gmail.com", "oauth2rt_1/#")
 	a.get_map_objects(31.804105, 34.784143, 0x4042c00000000000)
 	#a.get_map_objects(31.809826, 34.784631)
 
