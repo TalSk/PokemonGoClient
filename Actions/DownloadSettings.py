@@ -24,9 +24,6 @@ class DownloadSettings(object):
 
 	
 	def get(self):
-		#download_settings_request = DownloadSettingsRequest_pb2.GetInventoryRequest()
-		#download_settings_request.hash = ""
-		#self.request.requests[0].message = download_settings_reqest.SerializeToString()
 		data = self.request.SerializeToString()
 
 		if self.logger:

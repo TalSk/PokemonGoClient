@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='Enums/FortEnums.proto',
   package='Protos.Enums',
   syntax='proto3',
-  serialized_pb=_b('\n\x15\x45nums/FortEnums.proto\x12\x0cProtos.Enums*B\n\x0b\x46ortSponser\x12\x11\n\rUNSET_SPONSOR\x10\x00\x12\r\n\tMCDONALDS\x10\x01\x12\x11\n\rPOKEMON_STORE\x10\x02*#\n\x08\x46ortType\x12\x07\n\x03GYM\x10\x00\x12\x0e\n\nCHECKPOINT\x10\x01*3\n\x11\x46ortRenderingType\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x11\n\rINTERNAL_TEST\x10\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x15\x45nums/FortEnums.proto\x12\x0cProtos.Enums*B\n\x0b\x46ortSponser\x12\x11\n\rUNSET_SPONSOR\x10\x00\x12\r\n\tMCDONALDS\x10\x01\x12\x11\n\rPOKEMON_STORE\x10\x02*#\n\x08\x46ortType\x12\x07\n\x03GYM\x10\x00\x12\x0e\n\nCHECKPOINT\x10\x01*3\n\x11\x46ortRenderingType\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x11\n\rINTERNAL_TEST\x10\x01*p\n\x10\x46ortSearchResult\x12\x11\n\rNO_RESULT_SET\x10\x00\x12\x0b\n\x07SUCCESS\x10\x01\x12\x10\n\x0cOUT_OF_RANGE\x10\x02\x12\x16\n\x12IN_COOLDOWN_PERIOD\x10\x03\x12\x12\n\x0eINVENTORY_FULL\x10\x04\x62\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -97,6 +97,41 @@ _FORTRENDERINGTYPE = _descriptor.EnumDescriptor(
 _sym_db.RegisterEnumDescriptor(_FORTRENDERINGTYPE)
 
 FortRenderingType = enum_type_wrapper.EnumTypeWrapper(_FORTRENDERINGTYPE)
+_FORTSEARCHRESULT = _descriptor.EnumDescriptor(
+  name='FortSearchResult',
+  full_name='Protos.Enums.FortSearchResult',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='NO_RESULT_SET', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='SUCCESS', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='OUT_OF_RANGE', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='IN_COOLDOWN_PERIOD', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='INVENTORY_FULL', index=4, number=4,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=197,
+  serialized_end=309,
+)
+_sym_db.RegisterEnumDescriptor(_FORTSEARCHRESULT)
+
+FortSearchResult = enum_type_wrapper.EnumTypeWrapper(_FORTSEARCHRESULT)
 UNSET_SPONSOR = 0
 MCDONALDS = 1
 POKEMON_STORE = 2
@@ -104,11 +139,17 @@ GYM = 0
 CHECKPOINT = 1
 DEFAULT = 0
 INTERNAL_TEST = 1
+NO_RESULT_SET = 0
+SUCCESS = 1
+OUT_OF_RANGE = 2
+IN_COOLDOWN_PERIOD = 3
+INVENTORY_FULL = 4
 
 
 DESCRIPTOR.enum_types_by_name['FortSponser'] = _FORTSPONSER
 DESCRIPTOR.enum_types_by_name['FortType'] = _FORTTYPE
 DESCRIPTOR.enum_types_by_name['FortRenderingType'] = _FORTRENDERINGTYPE
+DESCRIPTOR.enum_types_by_name['FortSearchResult'] = _FORTSEARCHRESULT
 
 
 # @@protoc_insertion_point(module_scope)

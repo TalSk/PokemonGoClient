@@ -3,7 +3,7 @@ import RequestEnvelop_pb2
 from Enums import RequestEnums_pb2
 from Util import Constants, Logger, NetUtil, TypeUtil, Utils
 from Auth import GoogleLogin
-from Actions import GetMapObjects, GetPlayer, GetInventory, DownloadSettings
+from Actions import GetMapObjects, GetPlayer, GetInventory, DownloadSettings, FortSearch
 
 
 class PokemonGoClient(object):
@@ -82,4 +82,11 @@ class PokemonGoClient(object):
 		return DownloadSettings.DownloadSettings(raw_request, self.url, self.logger).get()
 
 	
+	def fort_search(self, fort_details, latitude, longitude, altitude):
+		self.change_location((latitude, longitude, altitude))
+		raw_request = self._create_raw_request()
+		new_request = raw_request.requests.add()
+		new_request.request_type = RequestEnums_pb2.FORT_SEARCH
+
+		return FortSearch.FortSearch(raw_request, self.url, self.logger).get(fort_details, latitude, longitude)
 

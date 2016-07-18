@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='Enums/PlayerEnums.proto',
   package='Protos.Enums',
   syntax='proto3',
-  serialized_pb=_b('\n\x17\x45nums/PlayerEnums.proto\x12\x0cProtos.Enums*7\n\tTeamColor\x12\x0b\n\x07NEUTRAL\x10\x00\x12\x08\n\x04\x42LUE\x10\x01\x12\x07\n\x03RED\x10\x02\x12\n\n\x06YELLOW\x10\x03*\x1e\n\x06Gender\x12\x08\n\x04MALE\x10\x00\x12\n\n\x06\x46\x45MALE\x10\x01*\xa1\x07\n\tBadgeType\x12\x0f\n\x0b\x42\x41\x44GE_UNSET\x10\x00\x12\x13\n\x0f\x42\x41\x44GE_TRAVEL_KM\x10\x01\x12\x19\n\x15\x42\x41\x44GE_POKEDEX_ENTRIES\x10\x02\x12\x17\n\x13\x42\x41\x44GE_CAPTURE_TOTAL\x10\x03\x12\x17\n\x13\x42\x41\x44GE_DEFEATED_FORT\x10\x04\x12\x17\n\x13\x42\x41\x44GE_EVOLVED_TOTAL\x10\x05\x12\x17\n\x13\x42\x41\x44GE_HATCHED_TOTAL\x10\x06\x12\x1b\n\x17\x42\x41\x44GE_ENCOUNTERED_TOTAL\x10\x07\x12\x1b\n\x17\x42\x41\x44GE_POKESTOPS_VISITED\x10\x08\x12\x1a\n\x16\x42\x41\x44GE_UNIQUE_POKESTOPS\x10\t\x12\x19\n\x15\x42\x41\x44GE_POKEBALL_THROWN\x10\n\x12\x16\n\x12\x42\x41\x44GE_BIG_MAGIKARP\x10\x0b\x12\x18\n\x14\x42\x41\x44GE_DEPLOYED_TOTAL\x10\x0c\x12\x1b\n\x17\x42\x41\x44GE_BATTLE_ATTACK_WON\x10\r\x12\x1d\n\x19\x42\x41\x44GE_BATTLE_TRAINING_WON\x10\x0e\x12\x1b\n\x17\x42\x41\x44GE_BATTLE_DEFEND_WON\x10\x0f\x12\x19\n\x15\x42\x41\x44GE_PRESTIGE_RAISED\x10\x10\x12\x1a\n\x16\x42\x41\x44GE_PRESTIGE_DROPPED\x10\x11\x12\x15\n\x11\x42\x41\x44GE_TYPE_NORMAL\x10\x12\x12\x17\n\x13\x42\x41\x44GE_TYPE_FIGHTING\x10\x13\x12\x15\n\x11\x42\x41\x44GE_TYPE_FLYING\x10\x14\x12\x15\n\x11\x42\x41\x44GE_TYPE_POISON\x10\x15\x12\x15\n\x11\x42\x41\x44GE_TYPE_GROUND\x10\x16\x12\x13\n\x0f\x42\x41\x44GE_TYPE_ROCK\x10\x17\x12\x12\n\x0e\x42\x41\x44GE_TYPE_BUG\x10\x18\x12\x14\n\x10\x42\x41\x44GE_TYPE_GHOST\x10\x19\x12\x14\n\x10\x42\x41\x44GE_TYPE_STEEL\x10\x1a\x12\x13\n\x0f\x42\x41\x44GE_TYPE_FIRE\x10\x1b\x12\x14\n\x10\x42\x41\x44GE_TYPE_WATER\x10\x1c\x12\x14\n\x10\x42\x41\x44GE_TYPE_GRASS\x10\x1d\x12\x17\n\x13\x42\x41\x44GE_TYPE_ELECTRIC\x10\x1e\x12\x16\n\x12\x42\x41\x44GE_TYPE_PSYCHIC\x10\x1f\x12\x12\n\x0e\x42\x41\x44GE_TYPE_ICE\x10 \x12\x15\n\x11\x42\x41\x44GE_TYPE_DRAGON\x10!\x12\x13\n\x0f\x42\x41\x44GE_TYPE_DARK\x10\"\x12\x14\n\x10\x42\x41\x44GE_TYPE_FAIRY\x10#\x12\x17\n\x13\x42\x41\x44GE_SMALL_RATTATA\x10$\x12\x11\n\rBADGE_PIKACHU\x10%*\xc9\x05\n\x08ItemType\x12\x10\n\x0cITEM_UNKNOWN\x10\x00\x12\x12\n\x0eITEM_POKE_BALL\x10\x01\x12\x13\n\x0fITEM_GREAT_BALL\x10\x02\x12\x13\n\x0fITEM_ULTRA_BALL\x10\x03\x12\x14\n\x10ITEM_MASTER_BALL\x10\x04\x12\x0f\n\x0bITEM_POTION\x10\x65\x12\x15\n\x11ITEM_SUPER_POTION\x10\x66\x12\x15\n\x11ITEM_HYPER_POTION\x10g\x12\x13\n\x0fITEM_MAX_POTION\x10h\x12\x10\n\x0bITEM_REVIVE\x10\xc9\x01\x12\x14\n\x0fITEM_MAX_REVIVE\x10\xca\x01\x12\x13\n\x0eITEM_LUCKY_EGG\x10\xad\x02\x12\x1a\n\x15ITEM_INCENSE_ORDINARY\x10\x91\x03\x12\x17\n\x12ITEM_INCENSE_SPICY\x10\x92\x03\x12\x16\n\x11ITEM_INCENSE_COOL\x10\x93\x03\x12\x18\n\x13ITEM_INCENSE_FLORAL\x10\x94\x03\x12\x13\n\x0eITEM_TROY_DISK\x10\xf5\x03\x12\x12\n\rITEM_X_ATTACK\x10\xda\x04\x12\x13\n\x0eITEM_X_DEFENSE\x10\xdb\x04\x12\x13\n\x0eITEM_X_MIRACLE\x10\xdc\x04\x12\x14\n\x0fITEM_RAZZ_BERRY\x10\xbd\x05\x12\x14\n\x0fITEM_BLUK_BERRY\x10\xbe\x05\x12\x15\n\x10ITEM_NANAB_BERRY\x10\xbf\x05\x12\x15\n\x10ITEM_WEPAR_BERRY\x10\xc0\x05\x12\x15\n\x10ITEM_PINAP_BERRY\x10\xc1\x05\x12\x18\n\x13ITEM_SPECIAL_CAMERA\x10\xa1\x06\x12#\n\x1eITEM_INCUBATOR_BASIC_UNLIMITED\x10\x85\x07\x12\x19\n\x14ITEM_INCUBATOR_BASIC\x10\x86\x07\x12!\n\x1cITEM_POKEMON_STORAGE_UPGRADE\x10\xe9\x07\x12\x1e\n\x19ITEM_ITEM_STORAGE_UPGRADE\x10\xea\x07*\xba\x02\n\x10ItemTypeCategory\x12\x12\n\x0eITEM_TYPE_NONE\x10\x00\x12\x16\n\x12ITEM_TYPE_POKEBALL\x10\x01\x12\x14\n\x10ITEM_TYPE_POTION\x10\x02\x12\x14\n\x10ITEM_TYPE_REVIVE\x10\x03\x12\x11\n\rITEM_TYPE_MAP\x10\x04\x12\x14\n\x10ITEM_TYPE_BATTLE\x10\x05\x12\x12\n\x0eITEM_TYPE_FOOD\x10\x06\x12\x14\n\x10ITEM_TYPE_CAMERA\x10\x07\x12\x12\n\x0eITEM_TYPE_DISK\x10\x08\x12\x17\n\x13ITEM_TYPE_INCUBATOR\x10\t\x12\x15\n\x11ITEM_TYPE_INCENSE\x10\n\x12\x16\n\x12ITEM_TYPE_XP_BOOST\x10\x0b\x12\x1f\n\x1bITEM_TYPE_INVENTORY_UPGRADE\x10\x0c*b\n\x14InventoryUpgradeType\x12\x11\n\rUPGRADE_UNSET\x10\x00\x12\x19\n\x15INCREASE_ITEM_STORAGE\x10\x01\x12\x1c\n\x18INCREASE_POKEMON_STORAGE\x10\x02*?\n\x10\x45ggIncubatorType\x12\x13\n\x0fINCUBATOR_UNSET\x10\x00\x12\x16\n\x12INCUBATOR_DISTANCE\x10\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x17\x45nums/PlayerEnums.proto\x12\x0cProtos.Enums*7\n\tTeamColor\x12\x0b\n\x07NEUTRAL\x10\x00\x12\x08\n\x04\x42LUE\x10\x01\x12\x07\n\x03RED\x10\x02\x12\n\n\x06YELLOW\x10\x03*\x1e\n\x06Gender\x12\x08\n\x04MALE\x10\x00\x12\n\n\x06\x46\x45MALE\x10\x01*\xa1\x07\n\tBadgeType\x12\x0f\n\x0b\x42\x41\x44GE_UNSET\x10\x00\x12\x13\n\x0f\x42\x41\x44GE_TRAVEL_KM\x10\x01\x12\x19\n\x15\x42\x41\x44GE_POKEDEX_ENTRIES\x10\x02\x12\x17\n\x13\x42\x41\x44GE_CAPTURE_TOTAL\x10\x03\x12\x17\n\x13\x42\x41\x44GE_DEFEATED_FORT\x10\x04\x12\x17\n\x13\x42\x41\x44GE_EVOLVED_TOTAL\x10\x05\x12\x17\n\x13\x42\x41\x44GE_HATCHED_TOTAL\x10\x06\x12\x1b\n\x17\x42\x41\x44GE_ENCOUNTERED_TOTAL\x10\x07\x12\x1b\n\x17\x42\x41\x44GE_POKESTOPS_VISITED\x10\x08\x12\x1a\n\x16\x42\x41\x44GE_UNIQUE_POKESTOPS\x10\t\x12\x19\n\x15\x42\x41\x44GE_POKEBALL_THROWN\x10\n\x12\x16\n\x12\x42\x41\x44GE_BIG_MAGIKARP\x10\x0b\x12\x18\n\x14\x42\x41\x44GE_DEPLOYED_TOTAL\x10\x0c\x12\x1b\n\x17\x42\x41\x44GE_BATTLE_ATTACK_WON\x10\r\x12\x1d\n\x19\x42\x41\x44GE_BATTLE_TRAINING_WON\x10\x0e\x12\x1b\n\x17\x42\x41\x44GE_BATTLE_DEFEND_WON\x10\x0f\x12\x19\n\x15\x42\x41\x44GE_PRESTIGE_RAISED\x10\x10\x12\x1a\n\x16\x42\x41\x44GE_PRESTIGE_DROPPED\x10\x11\x12\x15\n\x11\x42\x41\x44GE_TYPE_NORMAL\x10\x12\x12\x17\n\x13\x42\x41\x44GE_TYPE_FIGHTING\x10\x13\x12\x15\n\x11\x42\x41\x44GE_TYPE_FLYING\x10\x14\x12\x15\n\x11\x42\x41\x44GE_TYPE_POISON\x10\x15\x12\x15\n\x11\x42\x41\x44GE_TYPE_GROUND\x10\x16\x12\x13\n\x0f\x42\x41\x44GE_TYPE_ROCK\x10\x17\x12\x12\n\x0e\x42\x41\x44GE_TYPE_BUG\x10\x18\x12\x14\n\x10\x42\x41\x44GE_TYPE_GHOST\x10\x19\x12\x14\n\x10\x42\x41\x44GE_TYPE_STEEL\x10\x1a\x12\x13\n\x0f\x42\x41\x44GE_TYPE_FIRE\x10\x1b\x12\x14\n\x10\x42\x41\x44GE_TYPE_WATER\x10\x1c\x12\x14\n\x10\x42\x41\x44GE_TYPE_GRASS\x10\x1d\x12\x17\n\x13\x42\x41\x44GE_TYPE_ELECTRIC\x10\x1e\x12\x16\n\x12\x42\x41\x44GE_TYPE_PSYCHIC\x10\x1f\x12\x12\n\x0e\x42\x41\x44GE_TYPE_ICE\x10 \x12\x15\n\x11\x42\x41\x44GE_TYPE_DRAGON\x10!\x12\x13\n\x0f\x42\x41\x44GE_TYPE_DARK\x10\"\x12\x14\n\x10\x42\x41\x44GE_TYPE_FAIRY\x10#\x12\x17\n\x13\x42\x41\x44GE_SMALL_RATTATA\x10$\x12\x11\n\rBADGE_PIKACHU\x10%*\xc9\x05\n\x08ItemType\x12\x10\n\x0cITEM_UNKNOWN\x10\x00\x12\x12\n\x0eITEM_POKE_BALL\x10\x01\x12\x13\n\x0fITEM_GREAT_BALL\x10\x02\x12\x13\n\x0fITEM_ULTRA_BALL\x10\x03\x12\x14\n\x10ITEM_MASTER_BALL\x10\x04\x12\x0f\n\x0bITEM_POTION\x10\x65\x12\x15\n\x11ITEM_SUPER_POTION\x10\x66\x12\x15\n\x11ITEM_HYPER_POTION\x10g\x12\x13\n\x0fITEM_MAX_POTION\x10h\x12\x10\n\x0bITEM_REVIVE\x10\xc9\x01\x12\x14\n\x0fITEM_MAX_REVIVE\x10\xca\x01\x12\x13\n\x0eITEM_LUCKY_EGG\x10\xad\x02\x12\x1a\n\x15ITEM_INCENSE_ORDINARY\x10\x91\x03\x12\x17\n\x12ITEM_INCENSE_SPICY\x10\x92\x03\x12\x16\n\x11ITEM_INCENSE_COOL\x10\x93\x03\x12\x18\n\x13ITEM_INCENSE_FLORAL\x10\x94\x03\x12\x13\n\x0eITEM_TROY_DISK\x10\xf5\x03\x12\x12\n\rITEM_X_ATTACK\x10\xda\x04\x12\x13\n\x0eITEM_X_DEFENSE\x10\xdb\x04\x12\x13\n\x0eITEM_X_MIRACLE\x10\xdc\x04\x12\x14\n\x0fITEM_RAZZ_BERRY\x10\xbd\x05\x12\x14\n\x0fITEM_BLUK_BERRY\x10\xbe\x05\x12\x15\n\x10ITEM_NANAB_BERRY\x10\xbf\x05\x12\x15\n\x10ITEM_WEPAR_BERRY\x10\xc0\x05\x12\x15\n\x10ITEM_PINAP_BERRY\x10\xc1\x05\x12\x18\n\x13ITEM_SPECIAL_CAMERA\x10\xa1\x06\x12#\n\x1eITEM_INCUBATOR_BASIC_UNLIMITED\x10\x85\x07\x12\x19\n\x14ITEM_INCUBATOR_BASIC\x10\x86\x07\x12!\n\x1cITEM_POKEMON_STORAGE_UPGRADE\x10\xe9\x07\x12\x1e\n\x19ITEM_ITEM_STORAGE_UPGRADE\x10\xea\x07*\xba\x02\n\x10ItemTypeCategory\x12\x12\n\x0eITEM_TYPE_NONE\x10\x00\x12\x16\n\x12ITEM_TYPE_POKEBALL\x10\x01\x12\x14\n\x10ITEM_TYPE_POTION\x10\x02\x12\x14\n\x10ITEM_TYPE_REVIVE\x10\x03\x12\x11\n\rITEM_TYPE_MAP\x10\x04\x12\x14\n\x10ITEM_TYPE_BATTLE\x10\x05\x12\x12\n\x0eITEM_TYPE_FOOD\x10\x06\x12\x14\n\x10ITEM_TYPE_CAMERA\x10\x07\x12\x12\n\x0eITEM_TYPE_DISK\x10\x08\x12\x17\n\x13ITEM_TYPE_INCUBATOR\x10\t\x12\x15\n\x11ITEM_TYPE_INCENSE\x10\n\x12\x16\n\x12ITEM_TYPE_XP_BOOST\x10\x0b\x12\x1f\n\x1bITEM_TYPE_INVENTORY_UPGRADE\x10\x0c*b\n\x14InventoryUpgradeType\x12\x11\n\rUPGRADE_UNSET\x10\x00\x12\x19\n\x15INCREASE_ITEM_STORAGE\x10\x01\x12\x1c\n\x18INCREASE_POKEMON_STORAGE\x10\x02*?\n\x10\x45ggIncubatorType\x12\x13\n\x0fINCUBATOR_UNSET\x10\x00\x12\x16\n\x12INCUBATOR_DISTANCE\x10\x01*\xec\x05\n\x0c\x41\x63tivityType\x12\x14\n\x10\x41\x43TIVITY_UNKNOWN\x10\x00\x12\x1a\n\x16\x41\x43TIVITY_CATCH_POKEMON\x10\x01\x12!\n\x1d\x41\x43TIVITY_CATCH_LEGEND_POKEMON\x10\x02\x12\x19\n\x15\x41\x43TIVITY_FLEE_POKEMON\x10\x03\x12\x18\n\x14\x41\x43TIVITY_DEFEAT_FORT\x10\x04\x12\x1b\n\x17\x41\x43TIVITY_EVOLVE_POKEMON\x10\x05\x12\x16\n\x12\x41\x43TIVITY_HATCH_EGG\x10\x06\x12\x14\n\x10\x41\x43TIVITY_WALK_KM\x10\x07\x12\x1e\n\x1a\x41\x43TIVITY_POKEDEX_ENTRY_NEW\x10\x08\x12\x1e\n\x1a\x41\x43TIVITY_CATCH_FIRST_THROW\x10\t\x12\x1d\n\x19\x41\x43TIVITY_CATCH_NICE_THROW\x10\n\x12\x1e\n\x1a\x41\x43TIVITY_CATCH_GREAT_THROW\x10\x0b\x12\"\n\x1e\x41\x43TIVITY_CATCH_EXCELLENT_THROW\x10\x0c\x12\x1c\n\x18\x41\x43TIVITY_CATCH_CURVEBALL\x10\r\x12%\n!ACTIVITY_CATCH_FIRST_CATCH_OF_DAY\x10\x0e\x12\x1c\n\x18\x41\x43TIVITY_CATCH_MILESTONE\x10\x0f\x12\x1a\n\x16\x41\x43TIVITY_TRAIN_POKEMON\x10\x10\x12\x18\n\x14\x41\x43TIVITY_SEARCH_FORT\x10\x11\x12\x1c\n\x18\x41\x43TIVITY_RELEASE_POKEMON\x10\x12\x12\"\n\x1e\x41\x43TIVITY_HATCH_EGG_SMALL_BONUS\x10\x13\x12#\n\x1f\x41\x43TIVITY_HATCH_EGG_MEDIUM_BONUS\x10\x14\x12\"\n\x1e\x41\x43TIVITY_HATCH_EGG_LARGE_BONUS\x10\x15\x12 \n\x1c\x41\x43TIVITY_DEFEAT_GYM_DEFENDER\x10\x16\x12\x1e\n\x1a\x41\x43TIVITY_DEFEAT_GYM_LEADER\x10\x17\x62\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -497,6 +497,117 @@ _EGGINCUBATORTYPE = _descriptor.EnumDescriptor(
 _sym_db.RegisterEnumDescriptor(_EGGINCUBATORTYPE)
 
 EggIncubatorType = enum_type_wrapper.EnumTypeWrapper(_EGGINCUBATORTYPE)
+_ACTIVITYTYPE = _descriptor.EnumDescriptor(
+  name='ActivityType',
+  full_name='Protos.Enums.ActivityType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVITY_UNKNOWN', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVITY_CATCH_POKEMON', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVITY_CATCH_LEGEND_POKEMON', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVITY_FLEE_POKEMON', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVITY_DEFEAT_FORT', index=4, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVITY_EVOLVE_POKEMON', index=5, number=5,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVITY_HATCH_EGG', index=6, number=6,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVITY_WALK_KM', index=7, number=7,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVITY_POKEDEX_ENTRY_NEW', index=8, number=8,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVITY_CATCH_FIRST_THROW', index=9, number=9,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVITY_CATCH_NICE_THROW', index=10, number=10,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVITY_CATCH_GREAT_THROW', index=11, number=11,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVITY_CATCH_EXCELLENT_THROW', index=12, number=12,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVITY_CATCH_CURVEBALL', index=13, number=13,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVITY_CATCH_FIRST_CATCH_OF_DAY', index=14, number=14,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVITY_CATCH_MILESTONE', index=15, number=15,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVITY_TRAIN_POKEMON', index=16, number=16,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVITY_SEARCH_FORT', index=17, number=17,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVITY_RELEASE_POKEMON', index=18, number=18,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVITY_HATCH_EGG_SMALL_BONUS', index=19, number=19,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVITY_HATCH_EGG_MEDIUM_BONUS', index=20, number=20,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVITY_HATCH_EGG_LARGE_BONUS', index=21, number=21,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVITY_DEFEAT_GYM_DEFENDER', index=22, number=22,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVITY_DEFEAT_GYM_LEADER', index=23, number=23,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=2261,
+  serialized_end=3009,
+)
+_sym_db.RegisterEnumDescriptor(_ACTIVITYTYPE)
+
+ActivityType = enum_type_wrapper.EnumTypeWrapper(_ACTIVITYTYPE)
 NEUTRAL = 0
 BLUE = 1
 RED = 2
@@ -589,6 +700,30 @@ INCREASE_ITEM_STORAGE = 1
 INCREASE_POKEMON_STORAGE = 2
 INCUBATOR_UNSET = 0
 INCUBATOR_DISTANCE = 1
+ACTIVITY_UNKNOWN = 0
+ACTIVITY_CATCH_POKEMON = 1
+ACTIVITY_CATCH_LEGEND_POKEMON = 2
+ACTIVITY_FLEE_POKEMON = 3
+ACTIVITY_DEFEAT_FORT = 4
+ACTIVITY_EVOLVE_POKEMON = 5
+ACTIVITY_HATCH_EGG = 6
+ACTIVITY_WALK_KM = 7
+ACTIVITY_POKEDEX_ENTRY_NEW = 8
+ACTIVITY_CATCH_FIRST_THROW = 9
+ACTIVITY_CATCH_NICE_THROW = 10
+ACTIVITY_CATCH_GREAT_THROW = 11
+ACTIVITY_CATCH_EXCELLENT_THROW = 12
+ACTIVITY_CATCH_CURVEBALL = 13
+ACTIVITY_CATCH_FIRST_CATCH_OF_DAY = 14
+ACTIVITY_CATCH_MILESTONE = 15
+ACTIVITY_TRAIN_POKEMON = 16
+ACTIVITY_SEARCH_FORT = 17
+ACTIVITY_RELEASE_POKEMON = 18
+ACTIVITY_HATCH_EGG_SMALL_BONUS = 19
+ACTIVITY_HATCH_EGG_MEDIUM_BONUS = 20
+ACTIVITY_HATCH_EGG_LARGE_BONUS = 21
+ACTIVITY_DEFEAT_GYM_DEFENDER = 22
+ACTIVITY_DEFEAT_GYM_LEADER = 23
 
 
 DESCRIPTOR.enum_types_by_name['TeamColor'] = _TEAMCOLOR
@@ -598,6 +733,7 @@ DESCRIPTOR.enum_types_by_name['ItemType'] = _ITEMTYPE
 DESCRIPTOR.enum_types_by_name['ItemTypeCategory'] = _ITEMTYPECATEGORY
 DESCRIPTOR.enum_types_by_name['InventoryUpgradeType'] = _INVENTORYUPGRADETYPE
 DESCRIPTOR.enum_types_by_name['EggIncubatorType'] = _EGGINCUBATORTYPE
+DESCRIPTOR.enum_types_by_name['ActivityType'] = _ACTIVITYTYPE
 
 
 # @@protoc_insertion_point(module_scope)
