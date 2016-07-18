@@ -60,7 +60,7 @@ class GoogleLogin(object):
 		# Adding the authentication details
 		req_env.auth_info.provider = "google"
 		req_env.auth_info.token.contents = jwt_token
-		req_env.unknown12 = 1036 # TODO
+		req_env.unknown12 = 1036
 
 		raw_data = req_env.SerializeToString()
 		if self.logger:
@@ -84,7 +84,13 @@ class GoogleLogin(object):
 
 	def login(self):
 		if self._has_cache_login():
-			self.url, self.auth_ticket = self._get_cache_login()
+			try:
+				self.url, self.auth_ticket = self._get_cache_login()
+			except Exception:
+				self.logger.warning("Unable to get cached login, logging normally...")
+				jwt_token = JWTTokenReceiver(self.email, self.oauth_token, self.logger).get_token()
+				self.url, self.auth_ticket = self._authenticate(jwt_token)
+				self._cache_login()
 		else:
 			jwt_token = JWTTokenReceiver(self.email, self.oauth_token, self.logger).get_token()
 			self.url, self.auth_ticket = self._authenticate(jwt_token)

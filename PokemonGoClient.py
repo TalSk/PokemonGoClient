@@ -27,7 +27,7 @@ class PokemonGoClient(object):
 		request_envelop.auth_ticket.token = self.session_token.token
 		request_envelop.auth_ticket.expire_timestamp_ms = self.session_token.expire_timestamp_ms
 		request_envelop.auth_ticket.sig = self.session_token.sig
-		request_envelop.unknown12 = 3122 # TODO
+		request_envelop.unknown12 = 3122
 
 		return request_envelop
 
@@ -90,3 +90,13 @@ class PokemonGoClient(object):
 
 		return FortSearch.FortSearch(raw_request, self.url, self.logger).get(fort_details, latitude, longitude)
 
+	def catch_pokemon(self, encounter_id, spawn_point_id, latitude, longitude, altitude):
+		self.change_location((latitude, longitude, altitude))
+
+		raw_request = self._create_raw_request()
+		new_request = raw_request.requests.add()
+		new_request.request_type = RequestEnums_pb2.ENCOUNTER
+
+		Encounter.Encounter(raw_request, self.url, self.logger).get(encounter_id, spawn_point_id, latitude, longitude)
+
+		return CatchPokemon.CatchPokemon(raw_request, self.url, self.logger).get(encounter_id, spawn_point_id)
