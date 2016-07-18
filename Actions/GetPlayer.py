@@ -23,7 +23,6 @@ class GetPlayer(object):
 
 	
 	def get(self):
-		# No need for sepcial data in message
 		data = self.request.SerializeToString()
 
 		if self.logger:

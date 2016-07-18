@@ -19,29 +19,29 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='Requests/GetInventoryRequest.proto',
   package='Protos.Requests',
   syntax='proto3',
-  serialized_pb=_b('\n\"Requests/GetInventoryRequest.proto\x12\x0fProtos.Requests\"H\n\x13GetInventoryMessage\x12\x19\n\x11last_timestamp_ms\x18\x01 \x01(\x03\x12\x16\n\x0eitem_been_seen\x18\x02 \x01(\x05\x62\x06proto3')
+  serialized_pb=_b('\n\"Requests/GetInventoryRequest.proto\x12\x0fProtos.Requests\"H\n\x13GetInventoryRequest\x12\x19\n\x11last_timestamp_ms\x18\x01 \x01(\x03\x12\x16\n\x0eitem_been_seen\x18\x02 \x01(\x05\x62\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
 
 
-_GETINVENTORYMESSAGE = _descriptor.Descriptor(
-  name='GetInventoryMessage',
-  full_name='Protos.Requests.GetInventoryMessage',
+_GETINVENTORYREQUEST = _descriptor.Descriptor(
+  name='GetInventoryRequest',
+  full_name='Protos.Requests.GetInventoryRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='last_timestamp_ms', full_name='Protos.Requests.GetInventoryMessage.last_timestamp_ms', index=0,
+      name='last_timestamp_ms', full_name='Protos.Requests.GetInventoryRequest.last_timestamp_ms', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='item_been_seen', full_name='Protos.Requests.GetInventoryMessage.item_been_seen', index=1,
+      name='item_been_seen', full_name='Protos.Requests.GetInventoryRequest.item_been_seen', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -63,14 +63,14 @@ _GETINVENTORYMESSAGE = _descriptor.Descriptor(
   serialized_end=127,
 )
 
-DESCRIPTOR.message_types_by_name['GetInventoryMessage'] = _GETINVENTORYMESSAGE
+DESCRIPTOR.message_types_by_name['GetInventoryRequest'] = _GETINVENTORYREQUEST
 
-GetInventoryMessage = _reflection.GeneratedProtocolMessageType('GetInventoryMessage', (_message.Message,), dict(
-  DESCRIPTOR = _GETINVENTORYMESSAGE,
+GetInventoryRequest = _reflection.GeneratedProtocolMessageType('GetInventoryRequest', (_message.Message,), dict(
+  DESCRIPTOR = _GETINVENTORYREQUEST,
   __module__ = 'Requests.GetInventoryRequest_pb2'
-  # @@protoc_insertion_point(class_scope:Protos.Requests.GetInventoryMessage)
+  # @@protoc_insertion_point(class_scope:Protos.Requests.GetInventoryRequest)
   ))
-_sym_db.RegisterMessage(GetInventoryMessage)
+_sym_db.RegisterMessage(GetInventoryRequest)
 
 
 # @@protoc_insertion_point(module_scope)

@@ -19,16 +19,16 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='Requests/GetPlayerRequest.proto',
   package='Protos.Requests',
   syntax='proto3',
-  serialized_pb=_b('\n\x1fRequests/GetPlayerRequest.proto\x12\x0fProtos.Requests\"\x12\n\x10GetPlayerMessageb\x06proto3')
+  serialized_pb=_b('\n\x1fRequests/GetPlayerRequest.proto\x12\x0fProtos.Requests\"\x12\n\x10GetPlayerRequestb\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
 
 
-_GETPLAYERMESSAGE = _descriptor.Descriptor(
-  name='GetPlayerMessage',
-  full_name='Protos.Requests.GetPlayerMessage',
+_GETPLAYERREQUEST = _descriptor.Descriptor(
+  name='GetPlayerRequest',
+  full_name='Protos.Requests.GetPlayerRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -49,14 +49,14 @@ _GETPLAYERMESSAGE = _descriptor.Descriptor(
   serialized_end=70,
 )
 
-DESCRIPTOR.message_types_by_name['GetPlayerMessage'] = _GETPLAYERMESSAGE
+DESCRIPTOR.message_types_by_name['GetPlayerRequest'] = _GETPLAYERREQUEST
 
-GetPlayerMessage = _reflection.GeneratedProtocolMessageType('GetPlayerMessage', (_message.Message,), dict(
-  DESCRIPTOR = _GETPLAYERMESSAGE,
+GetPlayerRequest = _reflection.GeneratedProtocolMessageType('GetPlayerRequest', (_message.Message,), dict(
+  DESCRIPTOR = _GETPLAYERREQUEST,
   __module__ = 'Requests.GetPlayerRequest_pb2'
-  # @@protoc_insertion_point(class_scope:Protos.Requests.GetPlayerMessage)
+  # @@protoc_insertion_point(class_scope:Protos.Requests.GetPlayerRequest)
   ))
-_sym_db.RegisterMessage(GetPlayerMessage)
+_sym_db.RegisterMessage(GetPlayerRequest)
 
 
 # @@protoc_insertion_point(module_scope)

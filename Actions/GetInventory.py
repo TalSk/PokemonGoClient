@@ -24,8 +24,6 @@ class GetInventory(object):
 
 	
 	def get(self):
-		#get_inventory_request = GetInventoryRequest_pb2.GetInventoryRequest()
-		#get_inventory_request.last_timestamp_ms
 		data = self.request.SerializeToString()
 
 		if self.logger:

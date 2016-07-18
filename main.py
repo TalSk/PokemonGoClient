@@ -34,10 +34,11 @@ def parse_map_objects_response(data):
 if __name__ == '__main__':
 	client = PokemonGoClient((32.0918229,34.7743952, 37.5), log=True)
 	client.login("tal.skverer@gmail.com", "oauth2rt_1/#")
-	#response = client.get_map_objects(32.0918229,34.7743952, 37.5)
-	#print client.get_player()
-	#pprint.pprint(parse_map_objects_response(response))
-	#print client.get_inventory()
+	print client.download_settings()
+	response = client.get_map_objects(32.0918229,34.7743952, 37.5)
+	print client.get_player()
+	pprint.pprint(parse_map_objects_response(response))
+	print client.get_inventory()
 
 	#print "[I] There is a %s just %s meters away" % (Constants.POKEDEX[str(pokemon.pokemon_id)], pokemon.distance_in_meters)
 	#print "[!] There is a %s in these co-ords: %s, %s!" % (pokemon_name, pokemon.latitude, pokemon.longitude)

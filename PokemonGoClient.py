@@ -3,7 +3,7 @@ import RequestEnvelop_pb2
 from Enums import RequestEnums_pb2
 from Util import Constants, Logger, NetUtil, TypeUtil, Utils
 from Auth import GoogleLogin
-from Actions import GetMapObjects, GetPlayer, GetInventory
+from Actions import GetMapObjects, GetPlayer, GetInventory, DownloadSettings
 
 
 class PokemonGoClient(object):
@@ -19,6 +19,10 @@ class PokemonGoClient(object):
 		request_envelop = RequestEnvelop_pb2.RequestEnvelop()
 		request_envelop.status_code = 2
 		request_envelop.rpc_id = Utils.randomize_rpc_id()
+
+		request_envelop.latitude = self.location[0]
+		request_envelop.longitude = self.location[1]
+		request_envelop.altitude = self.location[2] # TODO
 
 		request_envelop.auth_ticket.token = self.session_token.token
 		request_envelop.auth_ticket.expire_timestamp_ms = self.session_token.expire_timestamp_ms
@@ -59,20 +63,23 @@ class PokemonGoClient(object):
 		new_request = raw_request.requests.add()
 		new_request.request_type = RequestEnums_pb2.GET_PLAYER
 
-		raw_request.latitude = self.location[0]
-		raw_request.longitude = self.location[1]
-		raw_request.altitude = self.location[2] # TODO
 		return GetPlayer.GetPlayer(raw_request, self.url, self.logger).get()
+
 
 	def get_inventory(self):
 		raw_request = self._create_raw_request()
 		new_request = raw_request.requests.add()
 		new_request.request_type = RequestEnums_pb2.GET_INVENTORY
 
-		raw_request.latitude = self.location[0]
-		raw_request.longitude = self.location[1]
-		raw_request.altitude = self.location[2] # TODO
 		return GetInventory.GetInventory(raw_request, self.url, self.logger).get()
+
+
+	def download_settings(self):
+		raw_request = self._create_raw_request()
+		new_request = raw_request.requests.add()
+		new_request.request_type = RequestEnums_pb2.DOWNLOAD_SETTINGS
+
+		return DownloadSettings.DownloadSettings(raw_request, self.url, self.logger).get()
 
 	
 
