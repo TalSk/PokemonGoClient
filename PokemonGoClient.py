@@ -3,12 +3,13 @@ import RequestEnvelop_pb2
 from Enums import RequestEnums_pb2
 from Util import Constants, Logger, NetUtil, TypeUtil, Utils
 from Auth import GoogleLogin
-from Actions import GetMapObjects
+from Actions import GetMapObjects, GetPlayer, GetInventory
 
 
 class PokemonGoClient(object):
 	
-	def __init__(self, log=False):
+	def __init__(self, location, log=False):
+		self.location = location
 		self.logger=None
 		if log:
 			self.logger = Logger.initialize_logger()
@@ -27,6 +28,10 @@ class PokemonGoClient(object):
 		return request_envelop
 
 
+	def change_location(self, location):
+		self.location = location
+
+
 	def login(self, email, oauth_token):
 		google_login = GoogleLogin.GoogleLogin(email, oauth_token, self.logger)
 		self.url, self.session_token = google_login.login()
@@ -37,12 +42,11 @@ class PokemonGoClient(object):
 	def get_map_objects(self, latitude, longitude, altitude):
 		neighboring_cell_ids = Utils.get_neighbors(latitude, longitude)
 		self.logger.debug("Received the following neighboring cell ids:\r\n%s" % neighboring_cell_ids)
-		latitude = TypeUtil.double_to_hex(latitude)
-		longitude = TypeUtil.double_to_hex(longitude)
 
 		raw_request = self._create_raw_request()
-		get_map_objects_request = raw_request.requests.add()
-		get_map_objects_request.request_type = RequestEnums_pb2.GET_MAP_OBJECTS
+		new_request = raw_request.requests.add()
+		new_request.request_type = RequestEnums_pb2.GET_MAP_OBJECTS
+
 		raw_request.latitude = latitude
 		raw_request.longitude = longitude
 		raw_request.altitude = altitude # TODO
@@ -51,8 +55,24 @@ class PokemonGoClient(object):
 
 
 	def get_player(self):
-		# TODO
-		pass
+		raw_request = self._create_raw_request()
+		new_request = raw_request.requests.add()
+		new_request.request_type = RequestEnums_pb2.GET_PLAYER
+
+		raw_request.latitude = self.location[0]
+		raw_request.longitude = self.location[1]
+		raw_request.altitude = self.location[2] # TODO
+		return GetPlayer.GetPlayer(raw_request, self.url, self.logger).get()
+
+	def get_inventory(self):
+		raw_request = self._create_raw_request()
+		new_request = raw_request.requests.add()
+		new_request.request_type = RequestEnums_pb2.GET_INVENTORY
+
+		raw_request.latitude = self.location[0]
+		raw_request.longitude = self.location[1]
+		raw_request.altitude = self.location[2] # TODO
+		return GetInventory.GetInventory(raw_request, self.url, self.logger).get()
 
 	
 

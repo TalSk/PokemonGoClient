@@ -27,15 +27,17 @@ def parse_map_objects_response(data):
 					found_pokemon[pokemon.encounter_id]["latitude"] = pokemon.latitude
 					found_pokemon[pokemon.encounter_id]["longitude"] = pokemon.longitude
 					found_pokemon[pokemon.encounter_id]["time_till_hidden"] = pokemon.time_till_hidden_ms / 1000.
-		return found_pokemon	
+		
+		return found_pokemon
 
 
 if __name__ == '__main__':
-	client = PokemonGoClient(log=True)
-	client.login("taltaltal1994@gmail.com", "oauth2rt_1/#")
-	response = client.get_map_objects(31.804105, 34.784143, 37.5)
-	#a.get_map_objects(31.809826, 34.784631, 37.5)
-	pprint.pprint(parse_map_objects_response(response))
+	client = PokemonGoClient((32.0918229,34.7743952, 37.5), log=True)
+	client.login("tal.skverer@gmail.com", "oauth2rt_1/#")
+	#response = client.get_map_objects(32.0918229,34.7743952, 37.5)
+	#print client.get_player()
+	#pprint.pprint(parse_map_objects_response(response))
+	#print client.get_inventory()
 
 	#print "[I] There is a %s just %s meters away" % (Constants.POKEDEX[str(pokemon.pokemon_id)], pokemon.distance_in_meters)
 	#print "[!] There is a %s in these co-ords: %s, %s!" % (pokemon_name, pokemon.latitude, pokemon.longitude)

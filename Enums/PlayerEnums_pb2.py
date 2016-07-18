@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='Enums/PlayerEnums.proto',
   package='Protos.Enums',
   syntax='proto3',
-  serialized_pb=_b('\n\x17\x45nums/PlayerEnums.proto\x12\x0cProtos.Enums*7\n\tTeamColor\x12\x0b\n\x07NEUTRAL\x10\x00\x12\x08\n\x04\x42LUE\x10\x01\x12\x07\n\x03RED\x10\x02\x12\n\n\x06YELLOW\x10\x03\x62\x06proto3')
+  serialized_pb=_b('\n\x17\x45nums/PlayerEnums.proto\x12\x0cProtos.Enums*7\n\tTeamColor\x12\x0b\n\x07NEUTRAL\x10\x00\x12\x08\n\x04\x42LUE\x10\x01\x12\x07\n\x03RED\x10\x02\x12\n\n\x06YELLOW\x10\x03*\x1e\n\x06Gender\x12\x08\n\x04MALE\x10\x00\x12\n\n\x06\x46\x45MALE\x10\x01*\xa1\x07\n\tBadgeType\x12\x0f\n\x0b\x42\x41\x44GE_UNSET\x10\x00\x12\x13\n\x0f\x42\x41\x44GE_TRAVEL_KM\x10\x01\x12\x19\n\x15\x42\x41\x44GE_POKEDEX_ENTRIES\x10\x02\x12\x17\n\x13\x42\x41\x44GE_CAPTURE_TOTAL\x10\x03\x12\x17\n\x13\x42\x41\x44GE_DEFEATED_FORT\x10\x04\x12\x17\n\x13\x42\x41\x44GE_EVOLVED_TOTAL\x10\x05\x12\x17\n\x13\x42\x41\x44GE_HATCHED_TOTAL\x10\x06\x12\x1b\n\x17\x42\x41\x44GE_ENCOUNTERED_TOTAL\x10\x07\x12\x1b\n\x17\x42\x41\x44GE_POKESTOPS_VISITED\x10\x08\x12\x1a\n\x16\x42\x41\x44GE_UNIQUE_POKESTOPS\x10\t\x12\x19\n\x15\x42\x41\x44GE_POKEBALL_THROWN\x10\n\x12\x16\n\x12\x42\x41\x44GE_BIG_MAGIKARP\x10\x0b\x12\x18\n\x14\x42\x41\x44GE_DEPLOYED_TOTAL\x10\x0c\x12\x1b\n\x17\x42\x41\x44GE_BATTLE_ATTACK_WON\x10\r\x12\x1d\n\x19\x42\x41\x44GE_BATTLE_TRAINING_WON\x10\x0e\x12\x1b\n\x17\x42\x41\x44GE_BATTLE_DEFEND_WON\x10\x0f\x12\x19\n\x15\x42\x41\x44GE_PRESTIGE_RAISED\x10\x10\x12\x1a\n\x16\x42\x41\x44GE_PRESTIGE_DROPPED\x10\x11\x12\x15\n\x11\x42\x41\x44GE_TYPE_NORMAL\x10\x12\x12\x17\n\x13\x42\x41\x44GE_TYPE_FIGHTING\x10\x13\x12\x15\n\x11\x42\x41\x44GE_TYPE_FLYING\x10\x14\x12\x15\n\x11\x42\x41\x44GE_TYPE_POISON\x10\x15\x12\x15\n\x11\x42\x41\x44GE_TYPE_GROUND\x10\x16\x12\x13\n\x0f\x42\x41\x44GE_TYPE_ROCK\x10\x17\x12\x12\n\x0e\x42\x41\x44GE_TYPE_BUG\x10\x18\x12\x14\n\x10\x42\x41\x44GE_TYPE_GHOST\x10\x19\x12\x14\n\x10\x42\x41\x44GE_TYPE_STEEL\x10\x1a\x12\x13\n\x0f\x42\x41\x44GE_TYPE_FIRE\x10\x1b\x12\x14\n\x10\x42\x41\x44GE_TYPE_WATER\x10\x1c\x12\x14\n\x10\x42\x41\x44GE_TYPE_GRASS\x10\x1d\x12\x17\n\x13\x42\x41\x44GE_TYPE_ELECTRIC\x10\x1e\x12\x16\n\x12\x42\x41\x44GE_TYPE_PSYCHIC\x10\x1f\x12\x12\n\x0e\x42\x41\x44GE_TYPE_ICE\x10 \x12\x15\n\x11\x42\x41\x44GE_TYPE_DRAGON\x10!\x12\x13\n\x0f\x42\x41\x44GE_TYPE_DARK\x10\"\x12\x14\n\x10\x42\x41\x44GE_TYPE_FAIRY\x10#\x12\x17\n\x13\x42\x41\x44GE_SMALL_RATTATA\x10$\x12\x11\n\rBADGE_PIKACHU\x10%*\xc9\x05\n\x08ItemType\x12\x10\n\x0cITEM_UNKNOWN\x10\x00\x12\x12\n\x0eITEM_POKE_BALL\x10\x01\x12\x13\n\x0fITEM_GREAT_BALL\x10\x02\x12\x13\n\x0fITEM_ULTRA_BALL\x10\x03\x12\x14\n\x10ITEM_MASTER_BALL\x10\x04\x12\x0f\n\x0bITEM_POTION\x10\x65\x12\x15\n\x11ITEM_SUPER_POTION\x10\x66\x12\x15\n\x11ITEM_HYPER_POTION\x10g\x12\x13\n\x0fITEM_MAX_POTION\x10h\x12\x10\n\x0bITEM_REVIVE\x10\xc9\x01\x12\x14\n\x0fITEM_MAX_REVIVE\x10\xca\x01\x12\x13\n\x0eITEM_LUCKY_EGG\x10\xad\x02\x12\x1a\n\x15ITEM_INCENSE_ORDINARY\x10\x91\x03\x12\x17\n\x12ITEM_INCENSE_SPICY\x10\x92\x03\x12\x16\n\x11ITEM_INCENSE_COOL\x10\x93\x03\x12\x18\n\x13ITEM_INCENSE_FLORAL\x10\x94\x03\x12\x13\n\x0eITEM_TROY_DISK\x10\xf5\x03\x12\x12\n\rITEM_X_ATTACK\x10\xda\x04\x12\x13\n\x0eITEM_X_DEFENSE\x10\xdb\x04\x12\x13\n\x0eITEM_X_MIRACLE\x10\xdc\x04\x12\x14\n\x0fITEM_RAZZ_BERRY\x10\xbd\x05\x12\x14\n\x0fITEM_BLUK_BERRY\x10\xbe\x05\x12\x15\n\x10ITEM_NANAB_BERRY\x10\xbf\x05\x12\x15\n\x10ITEM_WEPAR_BERRY\x10\xc0\x05\x12\x15\n\x10ITEM_PINAP_BERRY\x10\xc1\x05\x12\x18\n\x13ITEM_SPECIAL_CAMERA\x10\xa1\x06\x12#\n\x1eITEM_INCUBATOR_BASIC_UNLIMITED\x10\x85\x07\x12\x19\n\x14ITEM_INCUBATOR_BASIC\x10\x86\x07\x12!\n\x1cITEM_POKEMON_STORAGE_UPGRADE\x10\xe9\x07\x12\x1e\n\x19ITEM_ITEM_STORAGE_UPGRADE\x10\xea\x07*\xba\x02\n\x10ItemTypeCategory\x12\x12\n\x0eITEM_TYPE_NONE\x10\x00\x12\x16\n\x12ITEM_TYPE_POKEBALL\x10\x01\x12\x14\n\x10ITEM_TYPE_POTION\x10\x02\x12\x14\n\x10ITEM_TYPE_REVIVE\x10\x03\x12\x11\n\rITEM_TYPE_MAP\x10\x04\x12\x14\n\x10ITEM_TYPE_BATTLE\x10\x05\x12\x12\n\x0eITEM_TYPE_FOOD\x10\x06\x12\x14\n\x10ITEM_TYPE_CAMERA\x10\x07\x12\x12\n\x0eITEM_TYPE_DISK\x10\x08\x12\x17\n\x13ITEM_TYPE_INCUBATOR\x10\t\x12\x15\n\x11ITEM_TYPE_INCENSE\x10\n\x12\x16\n\x12ITEM_TYPE_XP_BOOST\x10\x0b\x12\x1f\n\x1bITEM_TYPE_INVENTORY_UPGRADE\x10\x0c*b\n\x14InventoryUpgradeType\x12\x11\n\rUPGRADE_UNSET\x10\x00\x12\x19\n\x15INCREASE_ITEM_STORAGE\x10\x01\x12\x1c\n\x18INCREASE_POKEMON_STORAGE\x10\x02*?\n\x10\x45ggIncubatorType\x12\x13\n\x0fINCUBATOR_UNSET\x10\x00\x12\x16\n\x12INCUBATOR_DISTANCE\x10\x01\x62\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -55,13 +55,549 @@ _TEAMCOLOR = _descriptor.EnumDescriptor(
 _sym_db.RegisterEnumDescriptor(_TEAMCOLOR)
 
 TeamColor = enum_type_wrapper.EnumTypeWrapper(_TEAMCOLOR)
+_GENDER = _descriptor.EnumDescriptor(
+  name='Gender',
+  full_name='Protos.Enums.Gender',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='MALE', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='FEMALE', index=1, number=1,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=98,
+  serialized_end=128,
+)
+_sym_db.RegisterEnumDescriptor(_GENDER)
+
+Gender = enum_type_wrapper.EnumTypeWrapper(_GENDER)
+_BADGETYPE = _descriptor.EnumDescriptor(
+  name='BadgeType',
+  full_name='Protos.Enums.BadgeType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_UNSET', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_TRAVEL_KM', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_POKEDEX_ENTRIES', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_CAPTURE_TOTAL', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_DEFEATED_FORT', index=4, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_EVOLVED_TOTAL', index=5, number=5,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_HATCHED_TOTAL', index=6, number=6,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_ENCOUNTERED_TOTAL', index=7, number=7,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_POKESTOPS_VISITED', index=8, number=8,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_UNIQUE_POKESTOPS', index=9, number=9,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_POKEBALL_THROWN', index=10, number=10,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_BIG_MAGIKARP', index=11, number=11,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_DEPLOYED_TOTAL', index=12, number=12,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_BATTLE_ATTACK_WON', index=13, number=13,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_BATTLE_TRAINING_WON', index=14, number=14,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_BATTLE_DEFEND_WON', index=15, number=15,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_PRESTIGE_RAISED', index=16, number=16,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_PRESTIGE_DROPPED', index=17, number=17,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_TYPE_NORMAL', index=18, number=18,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_TYPE_FIGHTING', index=19, number=19,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_TYPE_FLYING', index=20, number=20,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_TYPE_POISON', index=21, number=21,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_TYPE_GROUND', index=22, number=22,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_TYPE_ROCK', index=23, number=23,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_TYPE_BUG', index=24, number=24,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_TYPE_GHOST', index=25, number=25,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_TYPE_STEEL', index=26, number=26,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_TYPE_FIRE', index=27, number=27,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_TYPE_WATER', index=28, number=28,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_TYPE_GRASS', index=29, number=29,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_TYPE_ELECTRIC', index=30, number=30,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_TYPE_PSYCHIC', index=31, number=31,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_TYPE_ICE', index=32, number=32,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_TYPE_DRAGON', index=33, number=33,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_TYPE_DARK', index=34, number=34,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_TYPE_FAIRY', index=35, number=35,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_SMALL_RATTATA', index=36, number=36,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BADGE_PIKACHU', index=37, number=37,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=131,
+  serialized_end=1060,
+)
+_sym_db.RegisterEnumDescriptor(_BADGETYPE)
+
+BadgeType = enum_type_wrapper.EnumTypeWrapper(_BADGETYPE)
+_ITEMTYPE = _descriptor.EnumDescriptor(
+  name='ItemType',
+  full_name='Protos.Enums.ItemType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_UNKNOWN', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_POKE_BALL', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_GREAT_BALL', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_ULTRA_BALL', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_MASTER_BALL', index=4, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_POTION', index=5, number=101,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_SUPER_POTION', index=6, number=102,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_HYPER_POTION', index=7, number=103,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_MAX_POTION', index=8, number=104,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_REVIVE', index=9, number=201,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_MAX_REVIVE', index=10, number=202,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_LUCKY_EGG', index=11, number=301,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_INCENSE_ORDINARY', index=12, number=401,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_INCENSE_SPICY', index=13, number=402,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_INCENSE_COOL', index=14, number=403,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_INCENSE_FLORAL', index=15, number=404,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_TROY_DISK', index=16, number=501,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_X_ATTACK', index=17, number=602,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_X_DEFENSE', index=18, number=603,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_X_MIRACLE', index=19, number=604,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_RAZZ_BERRY', index=20, number=701,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_BLUK_BERRY', index=21, number=702,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_NANAB_BERRY', index=22, number=703,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_WEPAR_BERRY', index=23, number=704,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_PINAP_BERRY', index=24, number=705,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_SPECIAL_CAMERA', index=25, number=801,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_INCUBATOR_BASIC_UNLIMITED', index=26, number=901,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_INCUBATOR_BASIC', index=27, number=902,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_POKEMON_STORAGE_UPGRADE', index=28, number=1001,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_ITEM_STORAGE_UPGRADE', index=29, number=1002,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=1063,
+  serialized_end=1776,
+)
+_sym_db.RegisterEnumDescriptor(_ITEMTYPE)
+
+ItemType = enum_type_wrapper.EnumTypeWrapper(_ITEMTYPE)
+_ITEMTYPECATEGORY = _descriptor.EnumDescriptor(
+  name='ItemTypeCategory',
+  full_name='Protos.Enums.ItemTypeCategory',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_TYPE_NONE', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_TYPE_POKEBALL', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_TYPE_POTION', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_TYPE_REVIVE', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_TYPE_MAP', index=4, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_TYPE_BATTLE', index=5, number=5,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_TYPE_FOOD', index=6, number=6,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_TYPE_CAMERA', index=7, number=7,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_TYPE_DISK', index=8, number=8,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_TYPE_INCUBATOR', index=9, number=9,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_TYPE_INCENSE', index=10, number=10,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_TYPE_XP_BOOST', index=11, number=11,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ITEM_TYPE_INVENTORY_UPGRADE', index=12, number=12,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=1779,
+  serialized_end=2093,
+)
+_sym_db.RegisterEnumDescriptor(_ITEMTYPECATEGORY)
+
+ItemTypeCategory = enum_type_wrapper.EnumTypeWrapper(_ITEMTYPECATEGORY)
+_INVENTORYUPGRADETYPE = _descriptor.EnumDescriptor(
+  name='InventoryUpgradeType',
+  full_name='Protos.Enums.InventoryUpgradeType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='UPGRADE_UNSET', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='INCREASE_ITEM_STORAGE', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='INCREASE_POKEMON_STORAGE', index=2, number=2,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=2095,
+  serialized_end=2193,
+)
+_sym_db.RegisterEnumDescriptor(_INVENTORYUPGRADETYPE)
+
+InventoryUpgradeType = enum_type_wrapper.EnumTypeWrapper(_INVENTORYUPGRADETYPE)
+_EGGINCUBATORTYPE = _descriptor.EnumDescriptor(
+  name='EggIncubatorType',
+  full_name='Protos.Enums.EggIncubatorType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='INCUBATOR_UNSET', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='INCUBATOR_DISTANCE', index=1, number=1,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=2195,
+  serialized_end=2258,
+)
+_sym_db.RegisterEnumDescriptor(_EGGINCUBATORTYPE)
+
+EggIncubatorType = enum_type_wrapper.EnumTypeWrapper(_EGGINCUBATORTYPE)
 NEUTRAL = 0
 BLUE = 1
 RED = 2
 YELLOW = 3
+MALE = 0
+FEMALE = 1
+BADGE_UNSET = 0
+BADGE_TRAVEL_KM = 1
+BADGE_POKEDEX_ENTRIES = 2
+BADGE_CAPTURE_TOTAL = 3
+BADGE_DEFEATED_FORT = 4
+BADGE_EVOLVED_TOTAL = 5
+BADGE_HATCHED_TOTAL = 6
+BADGE_ENCOUNTERED_TOTAL = 7
+BADGE_POKESTOPS_VISITED = 8
+BADGE_UNIQUE_POKESTOPS = 9
+BADGE_POKEBALL_THROWN = 10
+BADGE_BIG_MAGIKARP = 11
+BADGE_DEPLOYED_TOTAL = 12
+BADGE_BATTLE_ATTACK_WON = 13
+BADGE_BATTLE_TRAINING_WON = 14
+BADGE_BATTLE_DEFEND_WON = 15
+BADGE_PRESTIGE_RAISED = 16
+BADGE_PRESTIGE_DROPPED = 17
+BADGE_TYPE_NORMAL = 18
+BADGE_TYPE_FIGHTING = 19
+BADGE_TYPE_FLYING = 20
+BADGE_TYPE_POISON = 21
+BADGE_TYPE_GROUND = 22
+BADGE_TYPE_ROCK = 23
+BADGE_TYPE_BUG = 24
+BADGE_TYPE_GHOST = 25
+BADGE_TYPE_STEEL = 26
+BADGE_TYPE_FIRE = 27
+BADGE_TYPE_WATER = 28
+BADGE_TYPE_GRASS = 29
+BADGE_TYPE_ELECTRIC = 30
+BADGE_TYPE_PSYCHIC = 31
+BADGE_TYPE_ICE = 32
+BADGE_TYPE_DRAGON = 33
+BADGE_TYPE_DARK = 34
+BADGE_TYPE_FAIRY = 35
+BADGE_SMALL_RATTATA = 36
+BADGE_PIKACHU = 37
+ITEM_UNKNOWN = 0
+ITEM_POKE_BALL = 1
+ITEM_GREAT_BALL = 2
+ITEM_ULTRA_BALL = 3
+ITEM_MASTER_BALL = 4
+ITEM_POTION = 101
+ITEM_SUPER_POTION = 102
+ITEM_HYPER_POTION = 103
+ITEM_MAX_POTION = 104
+ITEM_REVIVE = 201
+ITEM_MAX_REVIVE = 202
+ITEM_LUCKY_EGG = 301
+ITEM_INCENSE_ORDINARY = 401
+ITEM_INCENSE_SPICY = 402
+ITEM_INCENSE_COOL = 403
+ITEM_INCENSE_FLORAL = 404
+ITEM_TROY_DISK = 501
+ITEM_X_ATTACK = 602
+ITEM_X_DEFENSE = 603
+ITEM_X_MIRACLE = 604
+ITEM_RAZZ_BERRY = 701
+ITEM_BLUK_BERRY = 702
+ITEM_NANAB_BERRY = 703
+ITEM_WEPAR_BERRY = 704
+ITEM_PINAP_BERRY = 705
+ITEM_SPECIAL_CAMERA = 801
+ITEM_INCUBATOR_BASIC_UNLIMITED = 901
+ITEM_INCUBATOR_BASIC = 902
+ITEM_POKEMON_STORAGE_UPGRADE = 1001
+ITEM_ITEM_STORAGE_UPGRADE = 1002
+ITEM_TYPE_NONE = 0
+ITEM_TYPE_POKEBALL = 1
+ITEM_TYPE_POTION = 2
+ITEM_TYPE_REVIVE = 3
+ITEM_TYPE_MAP = 4
+ITEM_TYPE_BATTLE = 5
+ITEM_TYPE_FOOD = 6
+ITEM_TYPE_CAMERA = 7
+ITEM_TYPE_DISK = 8
+ITEM_TYPE_INCUBATOR = 9
+ITEM_TYPE_INCENSE = 10
+ITEM_TYPE_XP_BOOST = 11
+ITEM_TYPE_INVENTORY_UPGRADE = 12
+UPGRADE_UNSET = 0
+INCREASE_ITEM_STORAGE = 1
+INCREASE_POKEMON_STORAGE = 2
+INCUBATOR_UNSET = 0
+INCUBATOR_DISTANCE = 1
 
 
 DESCRIPTOR.enum_types_by_name['TeamColor'] = _TEAMCOLOR
+DESCRIPTOR.enum_types_by_name['Gender'] = _GENDER
+DESCRIPTOR.enum_types_by_name['BadgeType'] = _BADGETYPE
+DESCRIPTOR.enum_types_by_name['ItemType'] = _ITEMTYPE
+DESCRIPTOR.enum_types_by_name['ItemTypeCategory'] = _ITEMTYPECATEGORY
+DESCRIPTOR.enum_types_by_name['InventoryUpgradeType'] = _INVENTORYUPGRADETYPE
+DESCRIPTOR.enum_types_by_name['EggIncubatorType'] = _EGGINCUBATORTYPE
 
 
 # @@protoc_insertion_point(module_scope)

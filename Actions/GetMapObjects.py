@@ -1,5 +1,5 @@
-from Util import Utils, NetUtil, Constants
 import ResponseEnvelop_pb2
+from Util import Utils, NetUtil, Constants
 from Requests import GetMapObjectsRequest_pb2
 from Responses import GetMapObjectsResponse_pb2
 
