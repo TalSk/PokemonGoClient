@@ -15,9 +15,20 @@ And in the future, using this tool, the following will be implemented:
 - Auto-PokéCatcher
 
 ## Alright, I'm interested!
-Here's a tease of the scan feature:
+Some teasers:
 
-![Teaser Image](http://i.imgur.com/4pQVu9S.png)
+* Catching Pokémon
+![Catching Pokemon](http://i.imgur.com/HhKG5N4.png)
+* Scanning Pokémon
+![Pokemon](http://i.imgur.com/AL6OAFg.png)
+* Scanning Pokéstops
+![Pokestops](http://i.imgur.com/oOkLBaQ.png)
+* Getting player info
+![Player](http://i.imgur.com/NVeRqQp.png)
+* Getting player inventory
+![Inventory](http://i.imgur.com/it5qNym.png)
+* Getting Settings
+![Settings](http://i.imgur.com/uVDFRv6.png)
 
 ## Documentation
 - TBA
