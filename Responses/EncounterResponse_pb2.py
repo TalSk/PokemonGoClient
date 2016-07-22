@@ -15,72 +15,100 @@ _sym_db = _symbol_database.Default()
 
 from Pokemon import Pokemon_pb2 as Pokemon_dot_Pokemon__pb2
 Enums_dot_PokemonEnums__pb2 = Pokemon_dot_Pokemon__pb2.Enums_dot_PokemonEnums__pb2
+from Enums import PlayerEnums_pb2 as Enums_dot_PlayerEnums__pb2
 
 from Pokemon.Pokemon_pb2 import *
+from Enums.PlayerEnums_pb2 import *
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='Responses/EncounterResponse.proto',
   package='Protos.Responses',
   syntax='proto3',
-  serialized_pb=_b('\n!Responses/EncounterResponse.proto\x12\x10Protos.Responses\x1a\x15Pokemon/Pokemon.proto\"\xb6\x01\n\x11\x45ncounterResponse\x12\x14\n\x0c\x65ncounter_id\x18\x01 \x01(\x06\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x10\n\x08latitude\x18\x03 \x01(\x01\x12\x11\n\tlongitude\x18\x04 \x01(\x01\x12\x16\n\x0espawn_point_id\x18\x05 \x01(\t\x12(\n\x07pokemon\x18\x07 \x01(\x0b\x32\x17.Protos.Pokemon.Pokemon\x12\x11\n\tunknown11\x18\x0b \x01(\x05P\x00\x62\x06proto3')
+  serialized_pb=_b('\n!Responses/EncounterResponse.proto\x12\x10Protos.Responses\x1a\x15Pokemon/Pokemon.proto\x1a\x17\x45nums/PlayerEnums.proto\"\xe7\x04\n\x11\x45ncounterResponse\x12\x45\n\x07pokemon\x18\x01 \x01(\x0b\x32\x34.Protos.Responses.EncounterResponse.PokemonEncounter\x12\x43\n\x06status\x18\x03 \x01(\x0e\x32\x33.Protos.Responses.EncounterResponse.EncounterStatus\x12W\n\x15\x63\x61pture_probabilities\x18\x04 \x01(\x0b\x32\x38.Protos.Responses.EncounterResponse.CaptureProbabilities\x1a\xc0\x01\n\x10PokemonEncounter\x12\x14\n\x0c\x65ncounter_id\x18\x01 \x01(\x06\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x10\n\x08latitude\x18\x03 \x01(\x01\x12\x11\n\tlongitude\x18\x04 \x01(\x01\x12\x16\n\x0espawn_point_id\x18\x05 \x01(\t\x12(\n\x07pokemon\x18\x07 \x01(\x0b\x32\x17.Protos.Pokemon.Pokemon\x12\x1c\n\x14time_until_hidden_ms\x18\x0b \x01(\x05\x1a\x66\n\x14\x43\x61ptureProbabilities\x12\x31\n\rpokeball_type\x18\x01 \x03(\x0e\x32\x1a.Protos.Enums.PokeballType\x12\x1b\n\x13\x63\x61pture_probability\x18\x02 \x03(\x02\"B\n\x0f\x45ncounterStatus\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x14\n\x10\x45NCOUNTER_SUCESS\x10\x01\x12\x0c\n\x08UNKNOWN2\x10\x02P\x00P\x01\x62\x06proto3')
   ,
-  dependencies=[Pokemon_dot_Pokemon__pb2.DESCRIPTOR,])
+  dependencies=[Pokemon_dot_Pokemon__pb2.DESCRIPTOR,Enums_dot_PlayerEnums__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
 
+_ENCOUNTERRESPONSE_ENCOUNTERSTATUS = _descriptor.EnumDescriptor(
+  name='EncounterStatus',
+  full_name='Protos.Responses.EncounterResponse.EncounterStatus',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='UNKNOWN', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ENCOUNTER_SUCESS', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='UNKNOWN2', index=2, number=2,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=653,
+  serialized_end=719,
+)
+_sym_db.RegisterEnumDescriptor(_ENCOUNTERRESPONSE_ENCOUNTERSTATUS)
 
-_ENCOUNTERRESPONSE = _descriptor.Descriptor(
-  name='EncounterResponse',
-  full_name='Protos.Responses.EncounterResponse',
+
+_ENCOUNTERRESPONSE_POKEMONENCOUNTER = _descriptor.Descriptor(
+  name='PokemonEncounter',
+  full_name='Protos.Responses.EncounterResponse.PokemonEncounter',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='encounter_id', full_name='Protos.Responses.EncounterResponse.encounter_id', index=0,
+      name='encounter_id', full_name='Protos.Responses.EncounterResponse.PokemonEncounter.encounter_id', index=0,
       number=1, type=6, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='timestamp', full_name='Protos.Responses.EncounterResponse.timestamp', index=1,
+      name='timestamp', full_name='Protos.Responses.EncounterResponse.PokemonEncounter.timestamp', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='latitude', full_name='Protos.Responses.EncounterResponse.latitude', index=2,
+      name='latitude', full_name='Protos.Responses.EncounterResponse.PokemonEncounter.latitude', index=2,
       number=3, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='longitude', full_name='Protos.Responses.EncounterResponse.longitude', index=3,
+      name='longitude', full_name='Protos.Responses.EncounterResponse.PokemonEncounter.longitude', index=3,
       number=4, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='spawn_point_id', full_name='Protos.Responses.EncounterResponse.spawn_point_id', index=4,
+      name='spawn_point_id', full_name='Protos.Responses.EncounterResponse.PokemonEncounter.spawn_point_id', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='pokemon', full_name='Protos.Responses.EncounterResponse.pokemon', index=5,
+      name='pokemon', full_name='Protos.Responses.EncounterResponse.PokemonEncounter.pokemon', index=5,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='unknown11', full_name='Protos.Responses.EncounterResponse.unknown11', index=6,
+      name='time_until_hidden_ms', full_name='Protos.Responses.EncounterResponse.PokemonEncounter.time_until_hidden_ms', index=6,
       number=11, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -98,19 +126,124 @@ _ENCOUNTERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=79,
-  serialized_end=261,
+  serialized_start=355,
+  serialized_end=547,
 )
 
-_ENCOUNTERRESPONSE.fields_by_name['pokemon'].message_type = Pokemon_dot_Pokemon__pb2._POKEMON
+_ENCOUNTERRESPONSE_CAPTUREPROBABILITIES = _descriptor.Descriptor(
+  name='CaptureProbabilities',
+  full_name='Protos.Responses.EncounterResponse.CaptureProbabilities',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='pokeball_type', full_name='Protos.Responses.EncounterResponse.CaptureProbabilities.pokeball_type', index=0,
+      number=1, type=14, cpp_type=8, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='capture_probability', full_name='Protos.Responses.EncounterResponse.CaptureProbabilities.capture_probability', index=1,
+      number=2, type=2, cpp_type=6, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=549,
+  serialized_end=651,
+)
+
+_ENCOUNTERRESPONSE = _descriptor.Descriptor(
+  name='EncounterResponse',
+  full_name='Protos.Responses.EncounterResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='pokemon', full_name='Protos.Responses.EncounterResponse.pokemon', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='Protos.Responses.EncounterResponse.status', index=1,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='capture_probabilities', full_name='Protos.Responses.EncounterResponse.capture_probabilities', index=2,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[_ENCOUNTERRESPONSE_POKEMONENCOUNTER, _ENCOUNTERRESPONSE_CAPTUREPROBABILITIES, ],
+  enum_types=[
+    _ENCOUNTERRESPONSE_ENCOUNTERSTATUS,
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=104,
+  serialized_end=719,
+)
+
+_ENCOUNTERRESPONSE_POKEMONENCOUNTER.fields_by_name['pokemon'].message_type = Pokemon_dot_Pokemon__pb2._POKEMON
+_ENCOUNTERRESPONSE_POKEMONENCOUNTER.containing_type = _ENCOUNTERRESPONSE
+_ENCOUNTERRESPONSE_CAPTUREPROBABILITIES.fields_by_name['pokeball_type'].enum_type = Enums_dot_PlayerEnums__pb2._POKEBALLTYPE
+_ENCOUNTERRESPONSE_CAPTUREPROBABILITIES.containing_type = _ENCOUNTERRESPONSE
+_ENCOUNTERRESPONSE.fields_by_name['pokemon'].message_type = _ENCOUNTERRESPONSE_POKEMONENCOUNTER
+_ENCOUNTERRESPONSE.fields_by_name['status'].enum_type = _ENCOUNTERRESPONSE_ENCOUNTERSTATUS
+_ENCOUNTERRESPONSE.fields_by_name['capture_probabilities'].message_type = _ENCOUNTERRESPONSE_CAPTUREPROBABILITIES
+_ENCOUNTERRESPONSE_ENCOUNTERSTATUS.containing_type = _ENCOUNTERRESPONSE
 DESCRIPTOR.message_types_by_name['EncounterResponse'] = _ENCOUNTERRESPONSE
 
 EncounterResponse = _reflection.GeneratedProtocolMessageType('EncounterResponse', (_message.Message,), dict(
+
+  PokemonEncounter = _reflection.GeneratedProtocolMessageType('PokemonEncounter', (_message.Message,), dict(
+    DESCRIPTOR = _ENCOUNTERRESPONSE_POKEMONENCOUNTER,
+    __module__ = 'Responses.EncounterResponse_pb2'
+    # @@protoc_insertion_point(class_scope:Protos.Responses.EncounterResponse.PokemonEncounter)
+    ))
+  ,
+
+  CaptureProbabilities = _reflection.GeneratedProtocolMessageType('CaptureProbabilities', (_message.Message,), dict(
+    DESCRIPTOR = _ENCOUNTERRESPONSE_CAPTUREPROBABILITIES,
+    __module__ = 'Responses.EncounterResponse_pb2'
+    # @@protoc_insertion_point(class_scope:Protos.Responses.EncounterResponse.CaptureProbabilities)
+    ))
+  ,
   DESCRIPTOR = _ENCOUNTERRESPONSE,
   __module__ = 'Responses.EncounterResponse_pb2'
   # @@protoc_insertion_point(class_scope:Protos.Responses.EncounterResponse)
   ))
 _sym_db.RegisterMessage(EncounterResponse)
+_sym_db.RegisterMessage(EncounterResponse.PokemonEncounter)
+_sym_db.RegisterMessage(EncounterResponse.CaptureProbabilities)
 
 
 # @@protoc_insertion_point(module_scope)

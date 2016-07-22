@@ -27,6 +27,7 @@ class GoogleLogin(object):
 
 
 	def _get_cache_login(self):
+		# TODO: This is a horrible implementation.
 		with open(self.CACHE_FILE, "rb") as f:
 			f.readline()
 			url = f.readline()[:-2] # To remove \r\n
@@ -71,6 +72,7 @@ class GoogleLogin(object):
 	def _handle_response(self, response):
 		res_pb = ResponseEnvelop_pb2.ResponseEnvelop()
 		res_pb.ParseFromString(response.content)
+		# These are sadly required, as proto3 decided not to throw exceptions. :(
 		assert res_pb.api_url
 		assert res_pb.auth_ticket
 		# The url we recieve doesn't have a scheme prefix, or the rpc suffix.
@@ -82,11 +84,12 @@ class GoogleLogin(object):
 		return self._handle_response(response)
 
 
-	def login(self):
-		if self._has_cache_login():
+	def login(self, use_cache):
+		if use_cache and self._has_cache_login():
 			try:
 				self.url, self.auth_ticket = self._get_cache_login()
 			except Exception:
+				# TODO: There's a weird bug while trying to get cache from file, this is a lame hack until I fix this
 				self.logger.warning("Unable to get cached login, logging normally...")
 				jwt_token = JWTTokenReceiver(self.email, self.oauth_token, self.logger).get_token()
 				self.url, self.auth_ticket = self._authenticate(jwt_token)
@@ -96,8 +99,6 @@ class GoogleLogin(object):
 			self.url, self.auth_ticket = self._authenticate(jwt_token)
 			self._cache_login()
 
-		assert self.url
-		assert self.auth_ticket
 		if self.logger:
 			self.logger.debug("Received endpoint url and token:\r\n%s\r\n%s" % (self.url, self.auth_ticket))
 		

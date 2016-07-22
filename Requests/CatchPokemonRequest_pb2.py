@@ -13,14 +13,17 @@ from google.protobuf import descriptor_pb2
 _sym_db = _symbol_database.Default()
 
 
+from Enums import PlayerEnums_pb2 as Enums_dot_PlayerEnums__pb2
 
+from Enums.PlayerEnums_pb2 import *
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='Requests/CatchPokemonRequest.proto',
   package='Protos.Requests',
   syntax='proto3',
-  serialized_pb=_b('\n\"Requests/CatchPokemonRequest.proto\x12\x0fProtos.Requests\"\xc5\x01\n\x13\x43\x61tchPokemonRequest\x12\x14\n\x0c\x65ncounter_id\x18\x01 \x01(\x06\x12\x10\n\x08pokeball\x18\x02 \x01(\x05\x12\x1f\n\x17normalized_reticle_size\x18\x03 \x01(\x01\x12\x18\n\x10spawn_point_guid\x18\x04 \x01(\t\x12\x13\n\x0bhit_pokemon\x18\x05 \x01(\x08\x12\x15\n\rspin_modifier\x18\x06 \x01(\x01\x12\x1f\n\x17normalized_hit_position\x18\x07 \x01(\x01\x62\x06proto3')
-)
+  serialized_pb=_b('\n\"Requests/CatchPokemonRequest.proto\x12\x0fProtos.Requests\x1a\x17\x45nums/PlayerEnums.proto\"\xe1\x01\n\x13\x43\x61tchPokemonRequest\x12\x14\n\x0c\x65ncounter_id\x18\x01 \x01(\x06\x12,\n\x08pokeball\x18\x02 \x01(\x0e\x32\x1a.Protos.Enums.PokeballType\x12\x1f\n\x17normalized_reticle_size\x18\x03 \x01(\x01\x12\x18\n\x10spawn_point_guid\x18\x04 \x01(\t\x12\x13\n\x0bhit_pokemon\x18\x05 \x01(\x08\x12\x15\n\rspin_modifier\x18\x06 \x01(\x01\x12\x1f\n\x17normalized_hit_position\x18\x07 \x01(\x01P\x00\x62\x06proto3')
+  ,
+  dependencies=[Enums_dot_PlayerEnums__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
@@ -42,7 +45,7 @@ _CATCHPOKEMONREQUEST = _descriptor.Descriptor(
       options=None),
     _descriptor.FieldDescriptor(
       name='pokeball', full_name='Protos.Requests.CatchPokemonRequest.pokeball', index=1,
-      number=2, type=5, cpp_type=1, label=1,
+      number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -94,10 +97,11 @@ _CATCHPOKEMONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=56,
-  serialized_end=253,
+  serialized_start=81,
+  serialized_end=306,
 )
 
+_CATCHPOKEMONREQUEST.fields_by_name['pokeball'].enum_type = Enums_dot_PlayerEnums__pb2._POKEBALLTYPE
 DESCRIPTOR.message_types_by_name['CatchPokemonRequest'] = _CATCHPOKEMONREQUEST
 
 CatchPokemonRequest = _reflection.GeneratedProtocolMessageType('CatchPokemonRequest', (_message.Message,), dict(

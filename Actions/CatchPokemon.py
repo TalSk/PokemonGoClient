@@ -1,4 +1,5 @@
 import ResponseEnvelop_pb2
+import random
 from Util import NetUtil
 from Requests import CatchPokemonRequest_pb2
 from Responses import CatchPokemonResponse_pb2
@@ -37,5 +38,5 @@ class CatchPokemon(object):
 		data = self.request.SerializeToString()
 
 		if self.logger:
-			self.logger.debug("Sending CATCH_POKEMON request:\r\n%s" % self.request)
+			self.logger.debug("Sending CATCH_POKEMON request:\r\n%s" % catch_pokemon_request)
 		return self._handle_response(NetUtil.request("POST", self.url, data))

@@ -3,12 +3,21 @@ import RequestEnvelop_pb2
 from Enums import RequestEnums_pb2
 from Util import Constants, Logger, NetUtil, TypeUtil, Utils
 from Auth import GoogleLogin
-from Actions import GetMapObjects, GetPlayer, GetInventory, DownloadSettings, FortSearch
+from Actions import GetMapObjects, GetPlayer, GetInventory, DownloadSettings, FortSearch, Encounter, CatchPokemon
 
 
 class PokemonGoClient(object):
-	
+	"""
+		An all-purpose client for Pokemon Go server interaction.
+	"""
 	def __init__(self, location, log=False):
+		"""
+			Initializes class.
+
+
+			location: A Location instance describing the user current position.
+			log: Whether to log every request.
+		"""
 		self.location = location
 		self.logger=None
 		if log:
@@ -16,13 +25,24 @@ class PokemonGoClient(object):
 
 
 	def _create_raw_request(self):
+		"""
+			Creates a raw request to the server, wrapping the actual message.
+			Also, makes sure user is currently authenticated.
+
+			Returns the raw request protocol buffer object.
+		"""
+
+		# At first, if we authenticated longer than 30 minutes ago, it's time to re-login.
+		if time.time() - self.last_authenticated > Constants.HALF_AN_HOUR:
+			self.url, self.session_token = self.login(self.email, self.oauth_token, self.login_type, False)
+
 		request_envelop = RequestEnvelop_pb2.RequestEnvelop()
 		request_envelop.status_code = 2
 		request_envelop.rpc_id = Utils.randomize_rpc_id()
 
-		request_envelop.latitude = self.location[0]
-		request_envelop.longitude = self.location[1]
-		request_envelop.altitude = self.location[2] # TODO
+		request_envelop.latitude = self.location.latitude
+		request_envelop.longitude = self.location.longitude
+		request_envelop.altitude = self.location.altitude # TODO: Check if neccessary
 
 		request_envelop.auth_ticket.token = self.session_token.token
 		request_envelop.auth_ticket.expire_timestamp_ms = self.session_token.expire_timestamp_ms
@@ -33,32 +53,69 @@ class PokemonGoClient(object):
 
 
 	def change_location(self, location):
+		"""
+			Changes current client location
+
+
+			location: A Location instance describing the new position
+		"""
 		self.location = location
 
 
-	def login(self, email, oauth_token):
-		google_login = GoogleLogin.GoogleLogin(email, oauth_token, self.logger)
-		self.url, self.session_token = google_login.login()
+	def login(self, email, oauth_token, login_type="Google", use_cache=True):
+		"""
+			Receives a session token and an endpoint url from the server,
+			in effect, logging in the user.
+
+
+			email: User email address
+			oauth_token: User's google oauth2 token
+			login_type: Indicating the type of the login, either `Google` or `PTC`
+			use_cache: Whether to use saved login information
+
+			Returns None.
+		"""
+		self.login_type = login_type
+		self.email = email
+		self.oauth_token = oauth_token
+		if self.login_type == "Google":
+			google_login = GoogleLogin.GoogleLogin(self.email, self.oauth_token, self.logger)
+			self.url, self.session_token = google_login.login(use_cache)
+		elif self.login_type == "PTC":
+			raise Exception("PTC Login not implemented yet.")
+		else:
+			raise Exception("Error")
+		self.last_authenticated = time.time()
 		if self.logger:
 			self.logger.info("Logged in successfully as %s!" % email)
 
 
-	def get_map_objects(self, latitude, longitude, altitude):
-		neighboring_cell_ids = Utils.get_neighbors(latitude, longitude)
+	def get_map_objects(self, location):
+		"""
+			Gets map objects of a given location's nearby S3 cells.
+
+
+			location: A Location instance describing the current search center location
+
+			Returns a parsed server response.
+		"""
+		neighboring_cell_ids = Utils.get_neighbors(location.latitude, location.longitude)
 		self.logger.debug("Received the following neighboring cell ids:\r\n%s" % neighboring_cell_ids)
 
 		raw_request = self._create_raw_request()
 		new_request = raw_request.requests.add()
 		new_request.request_type = RequestEnums_pb2.GET_MAP_OBJECTS
 
-		raw_request.latitude = latitude
-		raw_request.longitude = longitude
-		raw_request.altitude = altitude # TODO
-
-		return GetMapObjects.GetMapObjects(raw_request, self.url, self.logger).get(latitude, longitude, neighboring_cell_ids)
+		gmo = GetMapObjects.GetMapObjects(raw_request, self.url, self.logger)
+		return gmo.get(location.latitude, location.longitude, neighboring_cell_ids)
 
 
 	def get_player(self):
+		"""
+			Gets logged in player's information
+
+			Returns a parsed server response.
+		"""
 		raw_request = self._create_raw_request()
 		new_request = raw_request.requests.add()
 		new_request.request_type = RequestEnums_pb2.GET_PLAYER
@@ -67,6 +124,11 @@ class PokemonGoClient(object):
 
 
 	def get_inventory(self):
+		"""
+			Gets logged in player's inventory
+
+			Returns a parsed server response.
+		"""
 		raw_request = self._create_raw_request()
 		new_request = raw_request.requests.add()
 		new_request.request_type = RequestEnums_pb2.GET_INVENTORY
@@ -75,6 +137,11 @@ class PokemonGoClient(object):
 
 
 	def download_settings(self):
+		"""
+			Downloads logged in player's settings.
+
+			Returns a parsed server response.
+		"""
 		raw_request = self._create_raw_request()
 		new_request = raw_request.requests.add()
 		new_request.request_type = RequestEnums_pb2.DOWNLOAD_SETTINGS
@@ -82,21 +149,48 @@ class PokemonGoClient(object):
 		return DownloadSettings.DownloadSettings(raw_request, self.url, self.logger).get()
 
 	
-	def fort_search(self, fort_details, latitude, longitude, altitude):
-		self.change_location((latitude, longitude, altitude))
+	def fort_search(self, pokestop_details, location):
+		"""
+			Searches a Pokestop.
+
+
+			pokestop_details: A dictionary containing three keys:
+						  id -> Pokestop's id
+						  latitude -> Pokestop's latitude
+						  longitude -> Pokestop's longitude
+			location: A Location instance describing player current location
+
+			Returns a parsed server response.
+		"""
 		raw_request = self._create_raw_request()
 		new_request = raw_request.requests.add()
 		new_request.request_type = RequestEnums_pb2.FORT_SEARCH
 
-		return FortSearch.FortSearch(raw_request, self.url, self.logger).get(fort_details, latitude, longitude)
+		fs = FortSearch.FortSearch(raw_request, self.url, self.logger)
+		return fs.get(pokestop_details, location.latitude, location.longitude)
 
-	def catch_pokemon(self, encounter_id, spawn_point_id, latitude, longitude, altitude):
-		self.change_location((latitude, longitude, altitude))
 
+	def catch_pokemon(self, encounter_id, spawn_point_id, location):
+		"""
+			Catches a Pokemon.
+
+
+			encounter_id: Pokemon encounter id
+			spawn_point_id: Pokemon spawn point id
+			location: A Location instance describing player current location
+
+			Returns a parsed server response.
+		"""
 		raw_request = self._create_raw_request()
 		new_request = raw_request.requests.add()
 		new_request.request_type = RequestEnums_pb2.ENCOUNTER
 
-		Encounter.Encounter(raw_request, self.url, self.logger).get(encounter_id, spawn_point_id, latitude, longitude)
+		enc = Encounter.Encounter(raw_request, self.url, self.logger)
+		enc.get(encounter_id, spawn_point_id, location.latitude, location.longitude)
 
-		return CatchPokemon.CatchPokemon(raw_request, self.url, self.logger).get(encounter_id, spawn_point_id)
+		raw_request = self._create_raw_request()
+		new_request = raw_request.requests.add()
+		new_request.request_type = RequestEnums_pb2.CATCH_POKEMON
+
+		cp = CatchPokemon.CatchPokemon(raw_request, self.url, self.logger)
+		return cp.get(encounter_id, spawn_point_id)

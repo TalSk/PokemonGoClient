@@ -34,5 +34,5 @@ class FortSearch(object):
 		data = self.request.SerializeToString()
 
 		if self.logger:
-			self.logger.debug("Sending FORT_SEARCH request:\r\n%s" % self.request)
+			self.logger.debug("Sending FORT_SEARCH request:\r\n%s" % fort_search_request)
 		return self._handle_response(NetUtil.request("POST", self.url, data))

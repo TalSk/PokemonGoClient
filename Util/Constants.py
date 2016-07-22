@@ -28,6 +28,14 @@ BASE_NIANTIC_URL = "https://pgorelease.nianticlabs.com/plfe/rpc"
 GET_MAP_OBJECTS_REQUEST = 106
 
 
+############
+# Settings #
+############
+POKEMON_VISIBLE_RANGE = 100.0
+ENCOUNTER_RANGE_METERS = 50.0
+INTERACTION_RANGE_METERS = 40.0
+
+
 ###################
 # Other constants #
 ###################

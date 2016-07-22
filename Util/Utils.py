@@ -13,3 +13,18 @@ def get_neighbors(latitude, longitude):
 
 def randomize_rpc_id():
 	return randint(1000000000000000000, 9000000000000000000)
+
+class Location(object):
+	def __init__(self, latitude, longitude, altitude):
+		self.latitude = latitude
+		self.longitude = longitude
+		self.altitude = altitude
+
+	def change_altitude(self, altitude):
+		self.altitude = altitude
+
+	def change_latitude(self, latitude):
+		self.latitude = latitude
+
+	def change_longitude(self, longitude):
+		self.longitude = longitude

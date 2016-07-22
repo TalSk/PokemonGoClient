@@ -33,5 +33,5 @@ class Encounter(object):
 		data = self.request.SerializeToString()
 
 		if self.logger:
-			self.logger.debug("Sending ENCOUNTER request:\r\n%s" % self.request)
+			self.logger.debug("Sending ENCOUNTER request:\r\n%s" % encounter_request)
 		return self._handle_response(NetUtil.request("POST", self.url, data))
