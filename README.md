@@ -18,16 +18,22 @@ And in the future, using this tool, the following will be implemented:
 Some teasers:
 
 * Catching Pokémon
+
 ![Catching Pokemon](http://i.imgur.com/HhKG5N4.png)
 * Scanning Pokémon
+
 ![Pokemon](http://i.imgur.com/AL6OAFg.png)
 * Scanning Pokéstops
+
 ![Pokestops](http://i.imgur.com/oOkLBaQ.png)
 * Getting player info
+
 ![Player](http://i.imgur.com/NVeRqQp.png)
 * Getting player inventory
+
 ![Inventory](http://i.imgur.com/it5qNym.png)
 * Getting Settings
+
 ![Settings](http://i.imgur.com/uVDFRv6.png)
 
 ## Documentation
