@@ -29,6 +29,7 @@ if __name__ == '__main__':
 
 # TODO:
 #		Hatch eggs
+#		Auto-clear inventory
 # 		Look for TODOs in code
 #		Document everything
 # 		Document in README
