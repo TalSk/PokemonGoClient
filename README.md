@@ -37,4 +37,16 @@ Some teasers:
 ![Settings](http://i.imgur.com/uVDFRv6.png)
 
 ## Documentation
-- TBA
+- Instantiate a starting location (Using the Location class from `Utils.py`)
+- Instantiate a client, giving it the starting location
+- Call the `login` function, with your Google Email, and a token extracted from your phone.
+- The client support the following actions:
+    * GET_MAP_OBJECT
+    * DOWNLOAD_SETTINGS
+    * GET_INVENTORY
+    * GET_PLAYER
+    * ENCOUNTER
+    * CATCH_POKEMON
+    * RELEASE_POKEMON
+    * FORT_DETAILS
+    * FORT_SEARCH
