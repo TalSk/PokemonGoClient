@@ -14,8 +14,30 @@ And in the future, using this tool, the following will be implemented:
 - Auto-PokéStopper
 - Auto-PokéCatcher
 
-## Alright, I'm interested!
-Some teasers:
+## Documentation
+- Instantiate a starting location (Using the Location class from `Utils.py`)
+- Instantiate a client, giving it the starting location
+- Call the `login` function, with your Google Email, and a token extracted from your phone.
+- The client supports the following actions (Those are well-documented in `PokemonGoClient.py`:
+    * GET_MAP_OBJECT
+    * DOWNLOAD_SETTINGS
+    * GET_INVENTORY
+    * GET_PLAYER
+    * ENCOUNTER
+    * CATCH_POKEMON
+    * RELEASE_POKEMON
+    * FORT_DETAILS
+    * FORT_SEARCH
+
+Alternatively, you can instantiate a Bot class (from `Bot.py`) using a Client instance.
+The bot imitates a normal player playing the game. The bot will:
+* Looks for Pokemon around the current location.
+* Catches said Pokemon, using an almost-perfect throw, using the worst available pokeball.
+* After catching every Pokemon, goes to the closest available Pokestop and spins it (If player inventory isn't full)
+* Repeats for profit.
+
+
+## Teasers
 
 * Catching Pokémon
 
@@ -38,27 +60,5 @@ Some teasers:
 
 
 * Botting!
+
 ![Bot](http://i.imgur.com/udNdwBC.png)
-
-
-## Documentation
-- Instantiate a starting location (Using the Location class from `Utils.py`)
-- Instantiate a client, giving it the starting location
-- Call the `login` function, with your Google Email, and a token extracted from your phone.
-- The client supports the following actions (Those are well-documented in `PokemonGoClient.py`:
-    * GET_MAP_OBJECT
-    * DOWNLOAD_SETTINGS
-    * GET_INVENTORY
-    * GET_PLAYER
-    * ENCOUNTER
-    * CATCH_POKEMON
-    * RELEASE_POKEMON
-    * FORT_DETAILS
-    * FORT_SEARCH
-
-Alternatively, you can instantiate a Bot class (from `Bot.py`) using a Client instance.
-The bot imitates a normal player playing the game. The bot will:
-* Looks for Pokemon around the current location.
-* Catches said Pokemon, using an almost-perfect throw, using the worst available pokeball.
-* After catching every Pokemon, goes to the closest available Pokestop and spins it (If player inventory isn't full)
-* Repeats for profit.
