@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='Responses/CatchPokemonResponse.proto',
   package='Protos.Responses',
   syntax='proto3',
-  serialized_pb=_b('\n$Responses/CatchPokemonResponse.proto\x12\x10Protos.Responses\x1a\x18\x45nums/PokemonEnums.proto\x1a\x1aPokemon/CaptureScore.proto\"\xa2\x01\n\x14\x43\x61tchPokemonResponse\x12)\n\x06status\x18\x01 \x01(\x0e\x32\x19.Protos.Enums.CatchStatus\x12,\n\x06scores\x18\x04 \x01(\x0b\x32\x1c.Protos.Pokemon.CaptureScore\x12\x1b\n\x13\x63\x61ptured_pokemon_id\x18\x02 \x01(\x04\x12\x14\n\x0cmiss_percent\x18\x03 \x01(\x01P\x00P\x01\x62\x06proto3')
+  serialized_pb=_b('\n$Responses/CatchPokemonResponse.proto\x12\x10Protos.Responses\x1a\x18\x45nums/PokemonEnums.proto\x1a\x1aPokemon/CaptureScore.proto\"\xa2\x01\n\x14\x43\x61tchPokemonResponse\x12)\n\x06status\x18\x01 \x01(\x0e\x32\x19.Protos.Enums.CatchStatus\x12\x14\n\x0cmiss_percent\x18\x02 \x01(\x01\x12\x1b\n\x13\x63\x61ptured_pokemon_id\x18\x03 \x01(\x06\x12,\n\x06scores\x18\x04 \x01(\x0b\x32\x1c.Protos.Pokemon.CaptureScoreP\x00P\x01\x62\x06proto3')
   ,
   dependencies=[Enums_dot_PokemonEnums__pb2.DESCRIPTOR,Pokemon_dot_CaptureScore__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -47,23 +47,23 @@ _CATCHPOKEMONRESPONSE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='scores', full_name='Protos.Responses.CatchPokemonResponse.scores', index=1,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='miss_percent', full_name='Protos.Responses.CatchPokemonResponse.miss_percent', index=1,
+      number=2, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='captured_pokemon_id', full_name='Protos.Responses.CatchPokemonResponse.captured_pokemon_id', index=2,
-      number=2, type=4, cpp_type=4, label=1,
+      number=3, type=6, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='miss_percent', full_name='Protos.Responses.CatchPokemonResponse.miss_percent', index=3,
-      number=3, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=float(0),
+      name='scores', full_name='Protos.Responses.CatchPokemonResponse.scores', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),

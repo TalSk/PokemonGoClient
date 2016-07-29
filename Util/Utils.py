@@ -1,5 +1,6 @@
 import s2sphere
 from random import randint
+from geopy.distance import vincenty
 
 
 def get_neighbors(latitude, longitude):
@@ -15,7 +16,7 @@ def randomize_rpc_id():
 	return randint(1000000000000000000, 9000000000000000000)
 
 class Location(object):
-	def __init__(self, latitude, longitude, altitude):
+	def __init__(self, latitude, longitude, altitude=0):
 		self.latitude = latitude
 		self.longitude = longitude
 		self.altitude = altitude
@@ -28,3 +29,8 @@ class Location(object):
 
 	def change_longitude(self, longitude):
 		self.longitude = longitude
+
+	def distance(self, other):
+		src = (self.latitude, self.longitude)
+		dst = (other.latitude, other.longitude)
+		return vincenty(src, dst) * 1000 # In meters

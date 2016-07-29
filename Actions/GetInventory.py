@@ -19,7 +19,7 @@ class GetInventory(object):
 		assert get_inventory_response
 
 		if self.logger:
-			self.logger.debug("Received GET_PLAYER response:\r\n%s" % get_inventory_response)
+			self.logger.debug("Received GET_INVENTORY response:\r\n%s" % get_inventory_response)
 		return get_inventory_response
 
 	
@@ -27,5 +27,5 @@ class GetInventory(object):
 		data = self.request.SerializeToString()
 
 		if self.logger:
-			self.logger.debug("Sending GET_PLAYER request:\r\n%s" % self.request)
+			self.logger.debug("Sending GET_INVENTORY request:\r\n%s" % self.request)
 		return self._handle_response(NetUtil.request("POST", self.url, data))

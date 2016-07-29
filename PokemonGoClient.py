@@ -3,7 +3,7 @@ import RequestEnvelop_pb2
 from Enums import RequestEnums_pb2
 from Util import Constants, Logger, NetUtil, TypeUtil, Utils
 from Auth import GoogleLogin
-from Actions import GetMapObjects, GetPlayer, GetInventory, DownloadSettings, FortSearch, Encounter, CatchPokemon
+from Actions import GetMapObjects, GetPlayer, GetInventory, DownloadSettings, FortSearch, Encounter, CatchPokemon, FortDetails, ReleasePokemon
 
 
 class PokemonGoClient(object):
@@ -148,8 +148,27 @@ class PokemonGoClient(object):
 
 		return DownloadSettings.DownloadSettings(raw_request, self.url, self.logger).get()
 
+
+	def fort_details(self, pokestop_details):
+		"""
+			Gets a Pokestop's details.
+
+
+			pokestop_details: A dictionary containing three keys:
+						  id -> Pokestop's id
+						  latitude -> Pokestop's latitude
+						  longitude -> Pokestop's longitude
+
+			Returns a parsed server response.
+		"""
+		raw_request = self._create_raw_request()
+		new_request = raw_request.requests.add()
+		new_request.request_type = RequestEnums_pb2.FORT_DETAILS
+
+		return FortDetails.FortDetails(raw_request, self.url, self.logger).get(pokestop_details)
+
 	
-	def fort_search(self, pokestop_details, location):
+	def fort_search(self, pokestop_details):
 		"""
 			Searches a Pokestop.
 
@@ -158,7 +177,6 @@ class PokemonGoClient(object):
 						  id -> Pokestop's id
 						  latitude -> Pokestop's latitude
 						  longitude -> Pokestop's longitude
-			location: A Location instance describing player current location
 
 			Returns a parsed server response.
 		"""
@@ -167,12 +185,12 @@ class PokemonGoClient(object):
 		new_request.request_type = RequestEnums_pb2.FORT_SEARCH
 
 		fs = FortSearch.FortSearch(raw_request, self.url, self.logger)
-		return fs.get(pokestop_details, location.latitude, location.longitude)
+		return fs.get(pokestop_details, self.location.latitude, self.location.longitude)
 
 
-	def catch_pokemon(self, encounter_id, spawn_point_id, location):
+	def encounter(self, encounter_id, spawn_point_id, location):
 		"""
-			Catches a Pokemon.
+			Encounters a Pokemon.
 
 
 			encounter_id: Pokemon encounter id
@@ -186,11 +204,38 @@ class PokemonGoClient(object):
 		new_request.request_type = RequestEnums_pb2.ENCOUNTER
 
 		enc = Encounter.Encounter(raw_request, self.url, self.logger)
-		enc.get(encounter_id, spawn_point_id, location.latitude, location.longitude)
+		return enc.get(encounter_id, spawn_point_id, location.latitude, location.longitude)
 
+
+	def catch_pokemon(self, encounter_id, spawn_point_id, pokeball_type='Normal'):
+		"""
+			Catches a Pokemon.
+
+
+			encounter_id: Pokemon encounter id
+			spawn_point_id: Pokemon spawn point id
+
+			Returns a parsed server response.
+		"""
 		raw_request = self._create_raw_request()
 		new_request = raw_request.requests.add()
 		new_request.request_type = RequestEnums_pb2.CATCH_POKEMON
 
 		cp = CatchPokemon.CatchPokemon(raw_request, self.url, self.logger)
-		return cp.get(encounter_id, spawn_point_id)
+		return cp.get(encounter_id, spawn_point_id, pokeball_type)
+
+
+	def release_pokemon(self, pokemon_id):
+		"""
+			Releases a Pokemon.
+
+
+			pokemon_id: Pokemon id
+
+			Returns a parsed server response.
+		"""
+		raw_request = self._create_raw_request()
+		new_request = raw_request.requests.add()
+		new_request.request_type = RequestEnums_pb2.RELEASE_POKEMON
+
+		return ReleasePokemon.ReleasePokemon(raw_request, self.url, self.logger).get(pokemon_id)

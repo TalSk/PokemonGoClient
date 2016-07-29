@@ -26,6 +26,8 @@ Map_dot_Pokemon_dot_OneStepPokemon__pb2 = Map_dot_MapCell__pb2.Map_dot_Pokemon_d
 Enums_dot_PokemonEnums__pb2 = Map_dot_MapCell__pb2.Enums_dot_PokemonEnums__pb2
 Map_dot_Pokemon_dot_TwoStepsPokemon__pb2 = Map_dot_MapCell__pb2.Map_dot_Pokemon_dot_TwoStepsPokemon__pb2
 Pokemon_dot_PokemonDetails__pb2 = Map_dot_MapCell__pb2.Pokemon_dot_PokemonDetails__pb2
+Enums_dot_PokemonEnums__pb2 = Map_dot_MapCell__pb2.Enums_dot_PokemonEnums__pb2
+Enums_dot_InventoryEnums__pb2 = Map_dot_MapCell__pb2.Enums_dot_InventoryEnums__pb2
 Map_dot_Pokemon_dot_ThreeStepsPokemon__pb2 = Map_dot_MapCell__pb2.Map_dot_Pokemon_dot_ThreeStepsPokemon__pb2
 Enums_dot_PokemonEnums__pb2 = Map_dot_MapCell__pb2.Enums_dot_PokemonEnums__pb2
 
@@ -35,7 +37,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='Responses/GetMapObjectsResponse.proto',
   package='Protos.Responses',
   syntax='proto3',
-  serialized_pb=_b('\n%Responses/GetMapObjectsResponse.proto\x12\x10Protos.Responses\x1a\x11Map/MapCell.proto\"O\n\x15GetMapObjectsResponse\x12&\n\tmap_tiles\x18\x01 \x03(\x0b\x32\x13.Protos.Map.MapCell\x12\x0e\n\x06Status\x18\x02 \x01(\x05P\x00\x62\x06proto3')
+  serialized_pb=_b('\n%Responses/GetMapObjectsResponse.proto\x12\x10Protos.Responses\x1a\x11Map/MapCell.proto\"O\n\x15GetMapObjectsResponse\x12&\n\tmap_cells\x18\x01 \x03(\x0b\x32\x13.Protos.Map.MapCell\x12\x0e\n\x06Status\x18\x02 \x01(\x05P\x00\x62\x06proto3')
   ,
   dependencies=[Map_dot_MapCell__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -51,7 +53,7 @@ _GETMAPOBJECTSRESPONSE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='map_tiles', full_name='Protos.Responses.GetMapObjectsResponse.map_tiles', index=0,
+      name='map_cells', full_name='Protos.Responses.GetMapObjectsResponse.map_cells', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -80,7 +82,7 @@ _GETMAPOBJECTSRESPONSE = _descriptor.Descriptor(
   serialized_end=157,
 )
 
-_GETMAPOBJECTSRESPONSE.fields_by_name['map_tiles'].message_type = Map_dot_MapCell__pb2._MAPCELL
+_GETMAPOBJECTSRESPONSE.fields_by_name['map_cells'].message_type = Map_dot_MapCell__pb2._MAPCELL
 DESCRIPTOR.message_types_by_name['GetMapObjectsResponse'] = _GETMAPOBJECTSRESPONSE
 
 GetMapObjectsResponse = _reflection.GeneratedProtocolMessageType('GetMapObjectsResponse', (_message.Message,), dict(

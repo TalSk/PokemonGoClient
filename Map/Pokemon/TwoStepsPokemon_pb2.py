@@ -14,6 +14,8 @@ _sym_db = _symbol_database.Default()
 
 
 from Pokemon import PokemonDetails_pb2 as Pokemon_dot_PokemonDetails__pb2
+Enums_dot_PokemonEnums__pb2 = Pokemon_dot_PokemonDetails__pb2.Enums_dot_PokemonEnums__pb2
+Enums_dot_InventoryEnums__pb2 = Pokemon_dot_PokemonDetails__pb2.Enums_dot_InventoryEnums__pb2
 
 from Pokemon.PokemonDetails_pb2 import *
 

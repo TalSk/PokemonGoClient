@@ -1,4 +1,6 @@
 import time
+import filelock
+from threading import Lock
 from Constants import *
 from Config import *
 
@@ -19,13 +21,18 @@ class Logger(object):
 	INFO = 0
 
 	def __init__(self, log_level):
+		self.lock = Lock()
 		self.log_level = self.LOG_LEVELS[log_level]
-		self.file = open(DEFAULT_LOG_PATH, "a")
 		
 	def _write(self, prefix, string):
-		self.file.write(BOUNDARY)
-		self.file.write(prefix + time.ctime(time.time()) + "--" + string + "\r\n")
-		self.file.write(BOUNDARY)
+		self.lock.acquire()
+		try:
+			with open(DEFAULT_LOG_PATH, "a") as f:
+				f.write(BOUNDARY)
+				f.write(prefix + time.ctime(time.time()) + "--" + string + "\r\n")
+				f.write(BOUNDARY)
+		finally:
+			self.lock.release()
 
 	def debug(self, string):
 		if self.log_level >= self.DEBUG:
