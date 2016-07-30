@@ -3,7 +3,7 @@ import RequestEnvelop_pb2
 from Enums import RequestEnums_pb2
 from Util import Constants, Logger, NetUtil, TypeUtil, Utils
 from Auth import GoogleLogin
-from Actions import GetMapObjects, GetPlayer, GetInventory, DownloadSettings, FortSearch, Encounter, CatchPokemon, FortDetails, ReleasePokemon
+from Actions import GetMapObjects, GetPlayer, GetInventory, DownloadSettings, FortSearch, Encounter, CatchPokemon, FortDetails, ReleasePokemon, RecycleInventoryItem
 
 
 class PokemonGoClient(object):
@@ -34,7 +34,7 @@ class PokemonGoClient(object):
 
 		# At first, if we authenticated longer than 30 minutes ago, it's time to re-login.
 		if time.time() - self.last_authenticated > Constants.HALF_AN_HOUR:
-			self.url, self.session_token = self.login(self.email, self.oauth_token, self.login_type, False)
+			self.login(self.email, self.oauth_token, self.login_type, False)
 
 		request_envelop = RequestEnvelop_pb2.RequestEnvelop()
 		request_envelop.status_code = 2
@@ -42,7 +42,7 @@ class PokemonGoClient(object):
 
 		request_envelop.latitude = self.location.latitude
 		request_envelop.longitude = self.location.longitude
-		request_envelop.altitude = self.location.altitude # TODO: Check if neccessary
+		request_envelop.altitude = self.location.altitude
 
 		request_envelop.auth_ticket.token = self.session_token.token
 		request_envelop.auth_ticket.expire_timestamp_ms = self.session_token.expire_timestamp_ms
@@ -239,3 +239,21 @@ class PokemonGoClient(object):
 		new_request.request_type = RequestEnums_pb2.RELEASE_POKEMON
 
 		return ReleasePokemon.ReleasePokemon(raw_request, self.url, self.logger).get(pokemon_id)
+
+
+	def recycle_inventory_item(self, item_id, count):
+		"""
+			Thorw an inventory item.
+
+
+			pokemon_id: Pokemon id
+
+			Returns a parsed server response.
+		"""
+		raw_request = self._create_raw_request()
+		new_request = raw_request.requests.add()
+		new_request.request_type = RequestEnums_pb2.RECYCLE_INVENTORY_ITEM
+
+		return RecycleInventoryItem.RecycleInventoryItem(raw_request, self.url, self.logger).get(item_id, count)
+
+

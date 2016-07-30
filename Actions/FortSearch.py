@@ -19,7 +19,8 @@ class FortSearch(object):
 		assert fort_search_response
 
 		if self.logger:
-			self.logger.debug("Received FORT_SEARCH response:\r\n%s" % fort_search_response)
+			self.logger.info("Received FORT_SEARCH response:\r\n")
+			self.logger.debug("%s" % fort_search_response)
 		return fort_search_response
 
 	
@@ -34,5 +35,6 @@ class FortSearch(object):
 		data = self.request.SerializeToString()
 
 		if self.logger:
-			self.logger.debug("Sending FORT_SEARCH request:\r\n%s" % fort_search_request)
+			self.logger.info("Sending FORT_SEARCH request:\r\n")
+			self.logger.debug("%s" % fort_search_request)
 		return self._handle_response(NetUtil.request("POST", self.url, data))

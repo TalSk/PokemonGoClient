@@ -27,7 +27,8 @@ class CatchPokemon(object):
 		assert catch_pokemon_response
 
 		if self.logger:
-			self.logger.debug("Received CATCH_POKEMON response:\r\n%s" % catch_pokemon_response)
+			self.logger.info("Received CATCH_POKEMON response:\r\n")
+			self.logger.debug("%s" % catch_pokemon_response)
 		return catch_pokemon_response
 
 	
@@ -45,5 +46,6 @@ class CatchPokemon(object):
 		data = self.request.SerializeToString()
 
 		if self.logger:
-			self.logger.debug("Sending CATCH_POKEMON request:\r\n%s" % catch_pokemon_request)
+			self.logger.info("Sending CATCH_POKEMON request:\r\n")
+			self.logger.debug("%s" % catch_pokemon_request)
 		return self._handle_response(NetUtil.request("POST", self.url, data))

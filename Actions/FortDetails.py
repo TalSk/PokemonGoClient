@@ -19,7 +19,8 @@ class FortDetails(object):
 		assert fort_details_response
 
 		if self.logger:
-			self.logger.debug("Received FORT_DETAILS response:\r\n%s" % fort_details_response)
+			self.logger.info("Received FORT_DETAILS response:\r\n")
+			self.logger.debug("%s" % fort_details_response)
 		return fort_details_response
 
 	
@@ -32,5 +33,6 @@ class FortDetails(object):
 		data = self.request.SerializeToString()
 
 		if self.logger:
-			self.logger.debug("Sending FORT_DETAILS request:\r\n%s" % fort_details_request)
+			self.logger.info("Sending FORT_DETAILS request:\r\n")
+			self.logger.debug("%s" % fort_details_request)
 		return self._handle_response(NetUtil.request("POST", self.url, data))

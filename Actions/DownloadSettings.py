@@ -19,7 +19,8 @@ class DownloadSettings(object):
 		assert download_settings_response
 
 		if self.logger:
-			self.logger.debug("Received DOWNLOAD_SETTINGS response:\r\n%s" % download_settings_response)
+			self.logger.info("Received DOWNLOAD_SETTINGS response:\r\n")
+			self.logger.debug("%s" % download_settings_response)
 		return download_settings_response
 
 	
@@ -27,5 +28,6 @@ class DownloadSettings(object):
 		data = self.request.SerializeToString()
 
 		if self.logger:
-			self.logger.debug("Sending DOWNLOAD_SETTINGS request:\r\n%s" % self.request)
+			self.logger.info("Sending DOWNLOAD_SETTINGS request:\r\n")
+			self.logger.debug("%s" % self.request)
 		return self._handle_response(NetUtil.request("POST", self.url, data))

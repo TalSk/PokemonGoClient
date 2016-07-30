@@ -19,7 +19,8 @@ class ReleasePokemon(object):
 		assert release_pokemon_response
 
 		if self.logger:
-			self.logger.debug("Received RELEASE_POKEMON response:\r\n%s" % release_pokemon_response)
+			self.logger.info("Received RELEASE_POKEMON response:\r\n")
+			self.logger.debug("%s" % release_pokemon_response)
 		return release_pokemon_response
 
 	
@@ -30,5 +31,6 @@ class ReleasePokemon(object):
 		data = self.request.SerializeToString()
 
 		if self.logger:
-			self.logger.debug("Sending RELEASE_POKEMON request:\r\n%s" % self.request)
+			self.logger.info("Sending RELEASE_POKEMON request:\r\n")
+			self.logger.debug("%s" % self.request)
 		return self._handle_response(NetUtil.request("POST", self.url, data))

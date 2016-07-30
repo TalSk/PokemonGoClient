@@ -30,11 +30,16 @@ def request_with_prepared(prepared_request):
 		response = s.send(prepared_request, verify=False, proxies=proxies)
 		if response.status_code != 200:
 			raise BadStatusException("Received bad status code from server: %s" % response.status_code)
+		if len(response.content) == 2:
+			raise AuthExpiredException("Auth token expired")
 		return response
 	except requests.exceptions.ConnectionError:
 		raise ServerDownException("Could not connect to Pokemon Go servers")
 
 class ServerDownException(Exception):
+	pass
+
+class AuthExpiredException(Exception):
 	pass
 
 class BadStatusException(Exception):

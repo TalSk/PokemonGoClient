@@ -19,7 +19,8 @@ class Encounter(object):
 		assert encounter_response
 
 		if self.logger:
-			self.logger.debug("Received ENCOUNTER response:\r\n%s" % encounter_response)
+			self.logger.info("Received ENCOUNTER response:\r\n")
+			self.logger.debug("%s" % encounter_response)
 		return encounter_response
 
 	
@@ -33,5 +34,6 @@ class Encounter(object):
 		data = self.request.SerializeToString()
 
 		if self.logger:
-			self.logger.debug("Sending ENCOUNTER request:\r\n%s" % encounter_request)
+			self.logger.info("Sending ENCOUNTER request:\r\n")
+			self.logger.debug("%s" % encounter_request)
 		return self._handle_response(NetUtil.request("POST", self.url, data))

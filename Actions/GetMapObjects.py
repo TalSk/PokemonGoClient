@@ -20,7 +20,7 @@ class GetMapObjects(object):
 		assert get_map_objects_response
 
 		if self.logger:
-			self.logger.debug("Received GET_MAP_OBJECTS response:\r\n%s" % get_map_objects_response)
+			self.logger.info("Received GET_MAP_OBJECTS response:\r\n%s" % get_map_objects_response)
 		return get_map_objects_response
 
 
@@ -36,7 +36,7 @@ class GetMapObjects(object):
 		data = self.request.SerializeToString()
 
 		if self.logger:
-			self.logger.debug("Sending GET_MAP_OBJECTS request:\r\n%s" % get_map_objects_request)
+			self.logger.info("Sending GET_MAP_OBJECTS request:\r\n%s" % get_map_objects_request)
 		return self._handle_response(NetUtil.request("POST", self.url, data))
 
 		

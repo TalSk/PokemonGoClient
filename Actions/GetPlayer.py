@@ -18,7 +18,8 @@ class GetPlayer(object):
 		assert get_player_response
 
 		if self.logger:
-			self.logger.debug("Received GET_PLAYER response:\r\n%s" % get_player_response)
+			self.logger.info("Received GET_PLAYER response:\r\n")
+			self.logger.debug("%s" % get_player_response)
 		return get_player_response
 
 	
@@ -26,5 +27,6 @@ class GetPlayer(object):
 		data = self.request.SerializeToString()
 
 		if self.logger:
-			self.logger.debug("Sending GET_PLAYER request:\r\n%s" % self.request)
+			self.logger.info("Sending GET_PLAYER request:\r\n")
+			self.logger.debug("%s" % self.request)
 		return self._handle_response(NetUtil.request("POST", self.url, data))
